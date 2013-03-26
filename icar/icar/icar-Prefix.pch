@@ -1,0 +1,19 @@
+//
+// Prefix header for all source files of the 'icar' target in the 'icar' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+	#import <UIKit/UIKit.h>
+	#import <Foundation/Foundation.h>
+	#import <CoreData/CoreData.h>
+	#import <CoreLocation/CoreLocation.h>
+	#import <QuartzCore/QuartzCore.h>
+	#import "AFJSONRequestOperation.h"
+	#import "UIImageView+AFNetworking.h"
+#endif
