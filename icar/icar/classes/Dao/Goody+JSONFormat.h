@@ -18,3 +18,4 @@
 				  toCurrentLocation:(CLLocation*) currentLocation
 						   fromLastLocation:(CLLocation*) lastLocation;
 @end
+

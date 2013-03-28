@@ -12,5 +12,8 @@
 @property(nonatomic) UIManagedDocument* iCarDatabase;
 @property(nonatomic) CLLocation* currentLocation;
 @property(nonatomic) CLLocation* lastLocation;
+@property (weak, nonatomic) IBOutlet UIButton *refreshIndexButton;
 @property(nonatomic) double searchRange;
+- (IBAction)refreshIndex:(UIButton*)refreshButton;
+- (IBAction) backToHome:(UIButton*)homeButton;
 @end

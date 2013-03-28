@@ -10,6 +10,7 @@
 #import "GEOGoodsIndexDataFetcher.h"
 #import "Goody+JSONFormat.h"
 #import "GoodsIndexCell.h"
+#import "UIButton+animateIcon.h"
 @interface GEOGoodsIndexViewController ()
 @property (nonatomic,readonly) CLLocationManager* locationManager;
 @end
@@ -20,7 +21,7 @@
  */
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
-	self.searchRange = 50.0f; // 单位公里
+	self.searchRange = 1000.0f; // 单位公里
 	if (self.iCarDatabase == nil) {
 		self.iCarDatabase = [[CoreDataManager share] managedDocument];
 	}
@@ -28,13 +29,17 @@
 	// 检测是否开启定位
 	if ([CLLocationManager locationServicesEnabled]) {
 		self.locationManager.delegate=self;
-		[self.locationManager startMonitoringSignificantLocationChanges];
+		[self.locationManager startUpdatingLocation];
 	}else{
 		// 没开启定位服务. 在此处开始加载数据
 		[self useDocument];
 	}
 	
 	
+}
+
+- (void)viewDidLoad{
+	[self.refreshIndexButton cosplayActivityIndicator];
 }
 
 #pragma mark - CLLocation delegate
@@ -55,7 +60,7 @@
   for ios6
  */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-	[self.locationManager stopMonitoringSignificantLocationChanges];
+	[self.locationManager stopUpdatingLocation];
 	NSAssert([locations count]>=1, @"获取当前位置失败了");
 	self.currentLocation = [locations lastObject];
 	self.lastLocation = [locations objectAtIndex:0];
@@ -90,7 +95,7 @@
 	cell.serviceTitleLabel.text = goody.name;
 	cell.priceLabel.text = [NSString stringWithFormat:@"$ %@",goody.price];
 	if ([goody.distanceFromCurrent doubleValue]>0) {
-		cell.distanceLabel.text = [NSString stringWithFormat:@"%.1f 公里",[goody.distanceFromCurrent doubleValue]];
+		cell.distanceLabel.text = [NSString stringWithFormat:@"%4.1f 公里",[goody.distanceFromCurrent doubleValue]];
 	}else{
 		cell.distanceLabel.text = @"获取位置中...";
 	}
@@ -125,7 +130,7 @@
 - (void) setupFetchResultControllerAtRange:(NSDecimalNumber*) range{
 	
 	NSFetchRequest* fetchAllServiceRequest = [NSFetchRequest fetchRequestWithEntityName:@"Goody"];
-	fetchAllServiceRequest.predicate = [NSPredicate predicateWithFormat:@"distanceFromCurrent <= %@",range];
+	//fetchAllServiceRequest.predicate = [NSPredicate predicateWithFormat:@"distanceFromCurrent <= %@",range];
 	fetchAllServiceRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"distanceFromCurrent" ascending:YES]];
 	
 	
@@ -139,6 +144,8 @@
  */
 #define JSON_URL_SERVICE @"https://api.mongolab.com/api/1/databases/yangche-geo/collections/services?apiKey=1gdxdp157X9xPkkGHFsH4MYBWWYaS37o"
 - (void) fetchDataFromServer{
+	[self.refreshIndexButton.imageView startAnimating];
+	[self.refreshIndexButton setEnabled:NO];
 	NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:JSON_URL_SERVICE]];
 	[GEOGoodsIndexDataFetcher fetchDataWithURL:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
 		// 由于取数据成功后,当前block会在main_queue执行.而接下来要做的是数据保存操作.所以另起一个queue
@@ -154,6 +161,8 @@
 				[self.iCarDatabase saveToURL:self.iCarDatabase.fileURL forSaveOperation:UIDocumentSaveForOverwriting completionHandler:^(BOOL success) {
 					dispatch_async(dispatch_get_main_queue(), ^{
 						//停止加载指示的动画
+						[self.refreshIndexButton.imageView stopAnimating];
+						[self.refreshIndexButton setEnabled:YES];
 					});
 				}];
 			}];
@@ -180,6 +189,9 @@
 								forRange:(double)range
 {
 	if (currentLocation != nil) {
+		[self.refreshIndexButton.imageView startAnimating];
+		[self.refreshIndexButton setEnabled:NO];
+		
 		dispatch_queue_t dataUpdateQ= dispatch_queue_create("Update Goods Index Data Queue", NULL);
 		dispatch_async(dataUpdateQ, ^{
 			//更新距离
@@ -187,6 +199,12 @@
 				[Goody updateDistanceInContext:self.iCarDatabase.managedObjectContext rangePredicate:range toCurrentLocation:currentLocation fromLastLocation:lastLocation];
 				
 			}];
+			
+			dispatch_async(dispatch_get_main_queue(), ^{
+				// 停止动画指示
+				[self.refreshIndexButton.imageView stopAnimating];
+				[self.refreshIndexButton setEnabled:YES];
+			});
 		});
 			
 	}
@@ -218,4 +236,24 @@
 	}
 }
 
+
+
+#pragma mark - action
+/*
+ 用户刷新
+ 获取用户位置. 更新距离
+ */
+- (void)refreshIndex:(UIButton *)refreshButton{
+	[self.locationManager startUpdatingLocation];
+}
+/*
+ 返回首页
+ */
+- (void)backToHome:(UIButton *)homeButton{
+	[self dismissModalViewControllerAnimated:YES];
+}
+- (void)viewDidUnload {
+	[self setRefreshIndexButton:nil];
+	[super viewDidUnload];
+}
 @end

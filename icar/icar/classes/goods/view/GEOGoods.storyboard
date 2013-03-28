@@ -77,7 +77,45 @@
                             <outlet property="delegate" destination="TRo-NR-ePe" id="IDI-fW-8L4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="附近服务" id="shG-5S-8qm"/>
+                    <navigationItem key="navigationItem" title="附近服务" id="shG-5S-8qm">
+                        <barButtonItem key="leftBarButtonItem" id="hiQ-5w-SHt">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FB1-kp-EGz">
+                                <rect key="frame" x="5" y="5" width="44" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="index-tab">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToHome:" destination="TRo-NR-ePe" eventType="touchUpInside" id="6Qs-6M-NWH"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="m0J-LX-pSa">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jmX-p2-VDP">
+                                <rect key="frame" x="271" y="5" width="44" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="search-refresh">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="refreshIndex:" destination="TRo-NR-ePe" eventType="touchUpInside" id="kBn-aF-gyI"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="refreshIndexButton" destination="jmX-p2-VDP" id="X5q-86-fG7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qjw-Xf-kW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,7 +145,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="index-tab" width="16" height="16"/>
         <image name="index-thumb" width="16" height="16"/>
+        <image name="search-refresh" width="16" height="16"/>
     </resources>
     <classes>
         <class className="CoreDataTableViewController" superclassName="UITableViewController">
@@ -115,6 +155,11 @@
         </class>
         <class className="GEOGoodsIndexViewController" superclassName="CoreDataTableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOGoodsIndexViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backToHome:" candidateClass="UIButton"/>
+                <relationship kind="action" name="refreshIndex:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="refreshIndexButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="GoodsIndexCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GoodsIndexCell.h"/>
