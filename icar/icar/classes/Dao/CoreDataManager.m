@@ -8,27 +8,27 @@
 
 #import "CoreDataManager.h"
 #define DB_NAME @"GEO_iCar_DB"
-static CoreDataManager* _instance;
+static CoreDataManager* _coreDataManagerInstance;
 @implementation CoreDataManager
 
 + (void)initialize{
 	NSAssert(self==[CoreDataManager class], @"Singleton! NOT for subclass");
-	_instance = [CoreDataManager new];
+	_coreDataManagerInstance = [CoreDataManager new];
 }
 
 + (CoreDataManager *)share{
-	return _instance;
+	return _coreDataManagerInstance;
 }
 
 @synthesize managedDocument = _managedDocument;
 #pragma mark - getter
 - (UIManagedDocument *)managedDocument{
-	if (_managedDocument != nil) {
-		return _managedDocument;
+	if (_managedDocument == nil) {
+		self.instanceCount +=1;
+		NSAssert(self.instanceCount <=1, @"oops,another managedDocument been created");
+		_managedDocument = [[UIManagedDocument alloc] initWithFileURL:[[self applicationDocumentsDirectory] URLByAppendingPathComponent:DB_NAME]];
 	}
-	self.instanceCount +=1;
-//	NSAssert(self.instanceCount <=1, @"oops,another managedDocument been created");
-	_managedDocument = [[UIManagedDocument alloc] initWithFileURL:[[self applicationDocumentsDirectory] URLByAppendingPathComponent:DB_NAME]];
+
 	return _managedDocument;
 }
 

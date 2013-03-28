@@ -7,12 +7,15 @@
 //
 
 #import "GEOGoodsIndexViewController.h"
-#import "GEOGoodsIndexDataFetcher.h"
+#import "GEODataFetcher.h"
 #import "Goody+JSONFormat.h"
 #import "GoodsIndexCell.h"
 #import "UIButton+animateIcon.h"
+#import "GEOGoodsDetailViewController.h"
+#import "UIStoryboardSegue+TopLevelViewController.h"
 @interface GEOGoodsIndexViewController ()
 @property (nonatomic,readonly) CLLocationManager* locationManager;
+@property (nonatomic) BOOL lock; // 防止定位过程中多次调用useDoument导致多次打开UIDocument的错误
 @end
 
 @implementation GEOGoodsIndexViewController
@@ -25,10 +28,11 @@
 	if (self.iCarDatabase == nil) {
 		self.iCarDatabase = [[CoreDataManager share] managedDocument];
 	}
-
+	self.lock = NO;
 	// 检测是否开启定位
 	if ([CLLocationManager locationServicesEnabled]) {
 		self.locationManager.delegate=self;
+		
 		[self.locationManager startUpdatingLocation];
 	}else{
 		// 没开启定位服务. 在此处开始加载数据
@@ -40,6 +44,7 @@
 
 - (void)viewDidLoad{
 	[self.refreshIndexButton cosplayActivityIndicator];
+	[self.refreshIndexButton.imageView startAnimating];
 }
 
 #pragma mark - CLLocation delegate
@@ -64,8 +69,9 @@
 	NSAssert([locations count]>=1, @"获取当前位置失败了");
 	self.currentLocation = [locations lastObject];
 	self.lastLocation = [locations objectAtIndex:0];
-
 	[self useDocument];
+	
+
 }
 
 
@@ -147,7 +153,7 @@
 	[self.refreshIndexButton.imageView startAnimating];
 	[self.refreshIndexButton setEnabled:NO];
 	NSURLRequest* request = [NSURLRequest requestWithURL:[NSURL URLWithString:JSON_URL_SERVICE]];
-	[GEOGoodsIndexDataFetcher fetchDataWithURL:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+	[GEODataFetcher fetchDataWithURL:request success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
 		// 由于取数据成功后,当前block会在main_queue执行.而接下来要做的是数据保存操作.所以另起一个queue
 		dispatch_queue_t dataPersistQ = dispatch_queue_create("Persist Goods Index Data Queue", NULL);
 		dispatch_async(dataPersistQ, ^{
@@ -216,8 +222,14 @@
  */
 #pragma  mark - open database document
 - (void) useDocument{
+	if (self.lock) {
+		return;
+	}
+	self.lock = YES;
+	
 	if (![[NSFileManager defaultManager] fileExistsAtPath:[self.iCarDatabase.fileURL path]]) {
 		[self.iCarDatabase saveToURL:self.iCarDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
+			self.lock = NO;
 			// 设置好FetchResultController 等待数据变化
 			[self setupFetchResultController];
 			// 因为是首次打开,所以需要去服务端取
@@ -225,9 +237,11 @@
 		}];
 	}else if (self.iCarDatabase.documentState == UIDocumentStateClosed){
 		[self.iCarDatabase openWithCompletionHandler:^(BOOL success) {
+			self.lock = NO;
 			// 设置好FetchResultController 等待数据变化
 			[self setupFetchResultController];
 			[self updateDistanceToCurrentLocation:self.currentLocation fromLastLocation:self.lastLocation];
+			
 		}];
 	}else if (self.iCarDatabase.documentState == UIDocumentStateNormal){
 		// 设置好FetchResultController 等待数据变化
@@ -236,7 +250,17 @@
 	}
 }
 
-
+#pragma mark - segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(GoodsIndexCell*)sender{
+	if ([segue.destinationViewController respondsToSelector:@selector(setGoodyId:)]) {
+		NSIndexPath* indexPath = [self.tableView indexPathForCell:sender];
+		NSString* goodyId = [[self.fetchedResultsController objectAtIndexPath:indexPath] oid];
+		[segue.destinationViewController setGoodyId:goodyId];
+				
+	}
+	
+		
+}
 
 #pragma mark - action
 /*
@@ -250,10 +274,13 @@
  返回首页
  */
 - (void)backToHome:(UIButton *)homeButton{
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)viewDidUnload {
 	[self setRefreshIndexButton:nil];
 	[super viewDidUnload];
+}
+- (void)dealloc{
+	[self.iCarDatabase closeWithCompletionHandler:nil];
 }
 @end

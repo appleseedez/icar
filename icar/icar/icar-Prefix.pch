@@ -17,6 +17,8 @@
 	#import "AFJSONRequestOperation.h"
 	#import "UIImageView+AFNetworking.h"
 	#import "CoreDataManager.h"
-
+	#import "UIImageView+ImageUtil.h"
+	#import "UITableViewCell+BackgroundUtil.h"
+	#import "UILabel+LableUtil.h"
 
 #endif

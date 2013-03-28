@@ -32,6 +32,7 @@
 	goody.price = [jsonInfo valueForKey:@"price"];
 	goody.location =[jsonInfo valueForKey:@"location"];
 	goody.thumb = [jsonInfo valueForKey:@"thumb"];
+	goody.storeId = [[jsonInfo valueForKey:@"shop_id"] valueForKey:@"$oid"];
 	if (currentLocation == nil) {
 		goody.distanceFromCurrent = [[NSDecimalNumber alloc] initWithDouble:-1.0f];
 	}else{

@@ -7,8 +7,7 @@
 //
 
 #import "GoodsIndexCell.h"
-#import "UIImageView+ImageUtil.h"
-#import "UITableViewCell+BackgroundUtil.h"
+
 @implementation GoodsIndexCell
 
 - (void)drawRect:(CGRect)rect{
