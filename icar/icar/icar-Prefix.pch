@@ -16,4 +16,7 @@
 	#import <QuartzCore/QuartzCore.h>
 	#import "AFJSONRequestOperation.h"
 	#import "UIImageView+AFNetworking.h"
+	#import "CoreDataManager.h"
+
+
 #endif

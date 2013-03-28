@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface GEOIndexViewController : UIViewController
-
+-(IBAction)modalToGoodsIndexByTouch:(UIButton*)button;
 @end

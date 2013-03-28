@@ -14,16 +14,9 @@
 
 @implementation GEOIndexViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	
-}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma  mark - action
+- (void)modalToGoodsIndexByTouch:(UIButton *)button{
+	[self presentViewController:[[UIStoryboard storyboardWithName:@"GEOGoods" bundle:nil] instantiateInitialViewController] animated:YES completion:nil];
 }
-
 @end

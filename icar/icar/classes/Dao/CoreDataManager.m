@@ -21,7 +21,7 @@ static CoreDataManager* _instance;
 }
 
 @synthesize managedDocument = _managedDocument;
-
+#pragma mark - getter
 - (UIManagedDocument *)managedDocument{
 	if (_managedDocument != nil) {
 		return _managedDocument;
@@ -33,7 +33,7 @@ static CoreDataManager* _instance;
 }
 
 
-
+#pragma mark - util method
 // 获取数据文件保存目录. 总是在应用的Document目录下
 - (NSURL *)applicationDocumentsDirectory{
 	return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
