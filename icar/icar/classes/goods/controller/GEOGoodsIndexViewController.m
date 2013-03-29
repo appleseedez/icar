@@ -158,7 +158,7 @@
 		dispatch_queue_t dataPersistQ = dispatch_queue_create("Persist Goods Index Data Queue", NULL);
 		dispatch_async(dataPersistQ, ^{
 			NSDictionary* goodsIndexData = JSON;
-			NSLog(@"%@",self.currentLocation);
+
 			[self.iCarDatabase.managedObjectContext performBlock:^{
 				for (NSDictionary* dataItem in goodsIndexData) {
 					[Goody goodsWithJSONFormatInfo:dataItem inManagedObjectContext:self.iCarDatabase.managedObjectContext AndLocation:self.currentLocation];

@@ -11,6 +11,15 @@
 		1849648D1704393600376DC3 /* GEOGoodsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1849648C1704393600376DC3 /* GEOGoodsDetailViewController.m */; };
 		1849649017043BCF00376DC3 /* GEOGoodsLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1849648F17043BCF00376DC3 /* GEOGoodsLocationViewController.m */; };
 		184964B2170445BA00376DC3 /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 184964B1170445BA00376DC3 /* mapapi.bundle */; };
+		1850B12A170582C2009FBEBD /* GEOCommentIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850B129170582C2009FBEBD /* GEOCommentIndexViewController.m */; };
+		1850B12E170583A1009FBEBD /* write-comment.png in Resources */ = {isa = PBXBuildFile; fileRef = 1850B12C170583A1009FBEBD /* write-comment.png */; };
+		1850B12F170583A1009FBEBD /* write-comment@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1850B12D170583A1009FBEBD /* write-comment@2x.png */; };
+		1850B13217058526009FBEBD /* GEOComposeCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850B13117058526009FBEBD /* GEOComposeCommentViewController.m */; };
+		1850B1351705885C009FBEBD /* deliver.png in Resources */ = {isa = PBXBuildFile; fileRef = 1850B1331705885C009FBEBD /* deliver.png */; };
+		1850B1361705885C009FBEBD /* deliver@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1850B1341705885C009FBEBD /* deliver@2x.png */; };
+		1850B13917058BDA009FBEBD /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850B13817058BDA009FBEBD /* CommentCell.m */; };
+		1850B14217059823009FBEBD /* Comment+JSONFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850B14117059823009FBEBD /* Comment+JSONFormat.m */; };
+		1850B14B1705D227009FBEBD /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850B14A1705D227009FBEBD /* Comment.m */; };
 		187B42441701192600331F3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B42431701192600331F3B /* UIKit.framework */; };
 		187B42461701192600331F3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B42451701192600331F3B /* Foundation.framework */; };
 		187B42481701192600331F3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B42471701192600331F3B /* CoreGraphics.framework */; };
@@ -167,6 +176,20 @@
 		184964AD1704453400376DC3 /* BMKUserLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKUserLocation.h; sourceTree = "<group>"; };
 		184964AE1704453400376DC3 /* BMKVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKVersion.h; sourceTree = "<group>"; };
 		184964B1170445BA00376DC3 /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
+		1850B128170582C2009FBEBD /* GEOCommentIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOCommentIndexViewController.h; sourceTree = "<group>"; };
+		1850B129170582C2009FBEBD /* GEOCommentIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEOCommentIndexViewController.m; sourceTree = "<group>"; };
+		1850B12C170583A1009FBEBD /* write-comment.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "write-comment.png"; sourceTree = "<group>"; };
+		1850B12D170583A1009FBEBD /* write-comment@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "write-comment@2x.png"; sourceTree = "<group>"; };
+		1850B13017058526009FBEBD /* GEOComposeCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOComposeCommentViewController.h; sourceTree = "<group>"; };
+		1850B13117058526009FBEBD /* GEOComposeCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEOComposeCommentViewController.m; sourceTree = "<group>"; };
+		1850B1331705885C009FBEBD /* deliver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = deliver.png; sourceTree = "<group>"; };
+		1850B1341705885C009FBEBD /* deliver@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "deliver@2x.png"; sourceTree = "<group>"; };
+		1850B13717058BDA009FBEBD /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
+		1850B13817058BDA009FBEBD /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
+		1850B14017059823009FBEBD /* Comment+JSONFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Comment+JSONFormat.h"; sourceTree = "<group>"; };
+		1850B14117059823009FBEBD /* Comment+JSONFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Comment+JSONFormat.m"; sourceTree = "<group>"; };
+		1850B1491705D227009FBEBD /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		1850B14A1705D227009FBEBD /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		187B42401701192600331F3B /* icar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = icar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		187B42431701192600331F3B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		187B42451701192600331F3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -398,6 +421,15 @@
 			path = baidumap;
 			sourceTree = "<group>";
 		};
+		1850B12B170583A1009FBEBD /* comment */ = {
+			isa = PBXGroup;
+			children = (
+				1850B12C170583A1009FBEBD /* write-comment.png */,
+				1850B12D170583A1009FBEBD /* write-comment@2x.png */,
+			);
+			path = comment;
+			sourceTree = "<group>";
+		};
 		187B42371701192600331F3B = {
 			isa = PBXGroup;
 			children = (
@@ -495,6 +527,7 @@
 		187B427F17011A0400331F3B /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				1850B12B170583A1009FBEBD /* comment */,
 				187B428017011A0400331F3B /* background */,
 				187B428517011A0400331F3B /* common */,
 				187B428817011A0400331F3B /* goods */,
@@ -528,6 +561,8 @@
 		187B428517011A0400331F3B /* common */ = {
 			isa = PBXGroup;
 			children = (
+				1850B1331705885C009FBEBD /* deliver.png */,
+				1850B1341705885C009FBEBD /* deliver@2x.png */,
 				187B428617011A0400331F3B /* close-button.png */,
 				187B428717011A0400331F3B /* close-button@2x.png */,
 			);
@@ -668,6 +703,8 @@
 				187B4316170125CC00331F3B /* CoreDataManager.m */,
 				1887B872170305D100227C37 /* Goody+JSONFormat.h */,
 				1887B873170305D100227C37 /* Goody+JSONFormat.m */,
+				1850B14017059823009FBEBD /* Comment+JSONFormat.h */,
+				1850B14117059823009FBEBD /* Comment+JSONFormat.m */,
 			);
 			name = dao;
 			path = Dao;
@@ -716,6 +753,10 @@
 				1849648C1704393600376DC3 /* GEOGoodsDetailViewController.m */,
 				1849648E17043BCF00376DC3 /* GEOGoodsLocationViewController.h */,
 				1849648F17043BCF00376DC3 /* GEOGoodsLocationViewController.m */,
+				1850B128170582C2009FBEBD /* GEOCommentIndexViewController.h */,
+				1850B129170582C2009FBEBD /* GEOCommentIndexViewController.m */,
+				1850B13017058526009FBEBD /* GEOComposeCommentViewController.h */,
+				1850B13117058526009FBEBD /* GEOComposeCommentViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -732,6 +773,8 @@
 				1887B87817034E6000227C37 /* GoodsIndexCell.h */,
 				1887B87917034E6000227C37 /* GoodsIndexCell.m */,
 				187B433917018ADE00331F3B /* GEOGoods.storyboard */,
+				1850B13717058BDA009FBEBD /* CommentCell.h */,
+				1850B13817058BDA009FBEBD /* CommentCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -749,6 +792,8 @@
 			isa = PBXGroup;
 			children = (
 				187B433C17018C7800331F3B /* icar.xcdatamodeld */,
+				1850B1491705D227009FBEBD /* Comment.h */,
+				1850B14A1705D227009FBEBD /* Comment.m */,
 				1887B88C1703591D00227C37 /* Goody.h */,
 				1887B88D1703591D00227C37 /* Goody.m */,
 			);
@@ -907,6 +952,10 @@
 				187B432B170155BA00331F3B /* adv@2x.png in Resources */,
 				187B433A17018ADE00331F3B /* GEOGoods.storyboard in Resources */,
 				184964B2170445BA00376DC3 /* mapapi.bundle in Resources */,
+				1850B12E170583A1009FBEBD /* write-comment.png in Resources */,
+				1850B12F170583A1009FBEBD /* write-comment@2x.png in Resources */,
+				1850B1351705885C009FBEBD /* deliver.png in Resources */,
+				1850B1361705885C009FBEBD /* deliver@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -976,6 +1025,11 @@
 				18F78507170491DB00864420 /* GoodyGalleryCell.m in Sources */,
 				18F78508170491DF00864420 /* GoodyMetaCell.m in Sources */,
 				18F78509170491E300864420 /* GoodyProviderCell.m in Sources */,
+				1850B12A170582C2009FBEBD /* GEOCommentIndexViewController.m in Sources */,
+				1850B13217058526009FBEBD /* GEOComposeCommentViewController.m in Sources */,
+				1850B13917058BDA009FBEBD /* CommentCell.m in Sources */,
+				1850B14217059823009FBEBD /* Comment+JSONFormat.m in Sources */,
+				1850B14B1705D227009FBEBD /* Comment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -356,6 +356,17 @@
                         </prototypes>
                         <sections/>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem image="add-to-order" width="44" style="plain" id="WQf-7q-xqS"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="KtZ-4f-EC5"/>
+                        <barButtonItem image="contact-button" width="44" style="plain" id="kM9-au-qfM"/>
+                        <barButtonItem image="like" width="44" style="plain" id="3vf-U8-LaA"/>
+                        <barButtonItem image="comment-button" width="44" style="plain" id="yr1-34-WX1">
+                            <connections>
+                                <segue destination="XrY-gb-SSd" kind="modal" id="COL-fc-tpz"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="商品详情" id="5KH-ca-F3h">
                         <barButtonItem key="leftBarButtonItem" id="6q5-Zd-F6e">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eWO-va-1bY">
@@ -392,10 +403,11 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r9W-bR-ceU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="803" y="-24"/>
+            <point key="canvasLocation" x="511" y="-40"/>
         </scene>
         <!--Goods Location View Controller - 位置-->
         <scene sceneID="vfQ-fF-sAW">
@@ -428,7 +440,189 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oub-Qz-Xy2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1341" y="-43"/>
+            <point key="canvasLocation" x="471" y="617"/>
+        </scene>
+        <!--Compose Comment View Controller - 我的评价-->
+        <scene sceneID="biW-Xa-AgN">
+            <objects>
+                <tableViewController id="niN-QC-uLP" customClass="GEOComposeCommentViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="piw-MZ-M0P">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="rlc-eS-xqC">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="niN-QC-uLP" id="rAS-F2-49b"/>
+                            <outlet property="delegate" destination="niN-QC-uLP" id="Ika-xi-8wb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="我的评价" id="9wq-oc-YA8">
+                        <barButtonItem key="leftBarButtonItem" id="UZi-kG-kmU">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Bh6-rz-9XF">
+                                <rect key="frame" x="5" y="5" width="44" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="close-button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="niN-QC-uLP" eventType="touchUpInside" id="FEM-79-11d"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="eQE-o2-Nh2">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fs7-Mb-Mj0">
+                                <rect key="frame" x="271" y="5" width="44" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="deliver">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deliver:" destination="niN-QC-uLP" eventType="touchUpInside" id="Xxt-eZ-rtR"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ntq-z2-5eB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1808" y="-49"/>
+        </scene>
+        <!--Comment Index View Controller - 口碑-->
+        <scene sceneID="0JR-J3-Jc3">
+            <objects>
+                <tableViewController id="Vqt-1s-Irf" customClass="GEOCommentIndexViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aA9-GE-e9f">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentCell" rowHeight="58" id="wTB-u7-Iiw" customClass="CommentCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="58"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="SCj-fU-5y1">
+                                            <rect key="frame" x="20" y="7" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="王老五" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Aaq-Qq-9Fl">
+                                            <rect key="frame" x="58" y="2" width="100" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="★★☆☆☆" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="5gM-bx-DSA">
+                                            <rect key="frame" x="58" y="16" width="78" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" red="0.25490197539999998" green="0.63921570780000003" blue="0.91372555489999996" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="2013-4-1 20:20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Uxj-cK-Ovx">
+                                            <rect key="frame" x="226" y="16" width="74" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="#屌爆了#" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AHN-Co-P01" customClass="AutoDetectHeightUILabel">
+                                            <rect key="frame" x="58" y="31" width="242" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="comentLabel" destination="AHN-Co-P01" id="xxr-fY-fRZ"/>
+                                    <outlet property="dateLabel" destination="Uxj-cK-Ovx" id="3gZ-wa-XXU"/>
+                                    <outlet property="nameLabel" destination="Aaq-Qq-9Fl" id="MkL-uJ-6TT"/>
+                                    <outlet property="scoreLabel" destination="5gM-bx-DSA" id="ihM-ht-8Ou"/>
+                                    <outlet property="thumbView" destination="SCj-fU-5y1" id="xKe-rB-heA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="口碑" id="kYB-1F-RNG">
+                        <barButtonItem key="leftBarButtonItem" id="WXs-vN-BVs">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="lu9-0C-TBH">
+                                <rect key="frame" x="5" y="5" width="44" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="close-button">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="Vqt-1s-Irf" eventType="touchUpInside" id="Pwv-ph-GuL"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="W77-Nr-X5C">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kWg-dU-vyo">
+                                <rect key="frame" x="271" y="5" width="44" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="write-comment">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="niN-QC-uLP" kind="push" id="pXK-lc-Wzw"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jFS-fS-v0P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1402" y="-49"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yyV-BF-dvv">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="XrY-gb-SSd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fkm-5w-S47">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Vqt-1s-Irf" kind="relationship" relationship="rootViewController" id="Lbw-f4-nsg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xBw-bY-mbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="979" y="-40"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mUd-MB-B0S">
@@ -447,7 +641,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wMz-Pe-flD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="339" y="-30"/>
+            <point key="canvasLocation" x="77" y="-40"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bOO-0E-BxC">
@@ -473,12 +667,110 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add-to-order" width="16" height="16"/>
         <image name="close-button" width="16" height="16"/>
+        <image name="comment-button" width="16" height="16"/>
+        <image name="contact-button" width="16" height="16"/>
+        <image name="deliver" width="16" height="16"/>
         <image name="index-location-btn" width="16" height="16"/>
         <image name="index-tab" width="16" height="16"/>
         <image name="index-thumb" width="16" height="16"/>
+        <image name="like" width="16" height="16"/>
         <image name="search-refresh" width="16" height="16"/>
+        <image name="write-comment" width="16" height="16"/>
     </resources>
+    <classes>
+        <class className="AutoDetectHeightUILabel" superclassName="UILabel">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AutoDetectHeightUILabel.h"/>
+        </class>
+        <class className="CommentCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="comentLabel" candidateClass="AutoDetectHeightUILabel"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thumbView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="CoreDataTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
+        </class>
+        <class className="GEOCommentIndexViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOCommentIndexViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="close:" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="GEOComposeCommentViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOComposeCommentViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="close:" candidateClass="UIButton"/>
+                <relationship kind="action" name="deliver:" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="GEOGoodsDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOGoodsDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="close:" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="GEOGoodsIndexViewController" superclassName="CoreDataTableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOGoodsIndexViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backToHome:" candidateClass="UIButton"/>
+                <relationship kind="action" name="refreshIndex:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="refreshIndexButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="GEOGoodsLocationViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOGoodsLocationViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="close:"/>
+            </relationships>
+        </class>
+        <class className="GoodsIndexCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoodsIndexCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="serviceTitleLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thumbView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="totalScoreLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GoodyGalleryCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoodyGalleryCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="gallaryThumbView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="gallaryThumbView3" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="galleryThumbView2" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="GoodyMetaCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoodyMetaCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="accordScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="addressLabel" candidateClass="AutoDetectHeightUILabel"/>
+                <relationship kind="outlet" name="attitudeScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="envScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pvCountLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="qualityScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="totalScoreLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="updateTimeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="GoodyProviderCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoodyProviderCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thumbView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
