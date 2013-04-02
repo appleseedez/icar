@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UITableViewCell (BackgroundUtil)
-- (void) addBackground;
+- (void) addGradientBackground;
+- (void) addColorBackground;
 @end

@@ -237,25 +237,81 @@
             </objects>
             <point key="canvasLocation" x="36" y="-396"/>
         </scene>
-        <!--Table View Controller - 我的养车-->
+        <!--My Center Index View Controller - 我的养车-->
         <scene sceneID="98h-79-Hqk">
             <objects>
-                <tableViewController id="hSB-hR-2kb" sceneMemberID="viewController">
+                <tableViewController id="hSB-hR-2kb" customClass="GEOMyCenterIndexViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="pnH-O0-q9x">
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="asb-zE-0TP">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyProfileCell" rowHeight="100" id="asb-zE-0TP" customClass="MyProfileCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" id="qg8-N5-ZRw" customClass="GEOBackground">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="84"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <view opaque="NO" contentMode="scaleToFill" id="TWw-0s-pwX">
+                                            <rect key="frame" x="0.0" y="86" width="320" height="14"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="林志炫" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tVq-Fn-sQs">
+                                            <rect key="frame" x="134" y="58" width="90" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="index-thumb" id="vXl-T2-L5p">
+                                            <rect key="frame" x="240" y="39" width="60" height="60"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="nameLabel" destination="tVq-Fn-sQs" id="lKt-fE-bSs"/>
+                                    <outlet property="thumbView" destination="vXl-T2-L5p" id="HeA-cJ-VqX"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MyStuffCell" id="KWR-eU-ldX" customClass="GEOMyStuffCell">
+                                <rect key="frame" x="0.0" y="122" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="index-thumb" id="UVx-lz-hC4">
+                                            <rect key="frame" x="52" y="7" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="我的购物车" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0dg-z7-u6s">
+                                            <rect key="frame" x="179" y="16" width="67" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="nameLabel" destination="0dg-z7-u6s" id="Xxn-cc-D4o"/>
+                                    <outlet property="thumbView" destination="UVx-lz-hC4" id="ZIL-WT-qTo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                     </tableView>
                     <navigationItem key="navigationItem" title="我的养车" id="6hg-YA-4F6"/>
                 </tableViewController>
@@ -463,6 +519,7 @@
         <image name="goods" width="16" height="16"/>
         <image name="index-background" width="16" height="16"/>
         <image name="index-tab" width="16" height="16"/>
+        <image name="index-thumb" width="16" height="16"/>
         <image name="insure" width="16" height="16"/>
         <image name="my-tab" width="16" height="16"/>
         <image name="proxy" width="16" height="16"/>
@@ -472,10 +529,30 @@
         <image name="wash" width="16" height="16"/>
     </resources>
     <classes>
+        <class className="GEOBackground" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOBackground.h"/>
+        </class>
         <class className="GEOIndexViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOIndexViewController.h"/>
             <relationships>
                 <relationship kind="action" name="modalToGoodsIndexByTouch:" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="GEOMyCenterIndexViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOMyCenterIndexViewController.h"/>
+        </class>
+        <class className="GEOMyStuffCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOMyStuffCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thumbView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="MyProfileCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyProfileCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="thumbView" candidateClass="UIImageView"/>
             </relationships>
         </class>
     </classes>

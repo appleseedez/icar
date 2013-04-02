@@ -1,18 +1,18 @@
 //
-//  CommentCell.m
+//  MyProfileCell.m
 //  icar
 //
-//  Created by Pharaoh on 13-3-29.
+//  Created by Pharaoh on 13-3-30.
 //  Copyright (c) 2013年 365icar. All rights reserved.
 //
 
-#import "CommentCell.h"
+#import "MyProfileCell.h"
 
-@implementation CommentCell
-
+@implementation MyProfileCell
 - (void)drawRect:(CGRect)rect{
 	[super drawRect:rect];
 	[self.thumbView addBorder];
-	[self addGradientBackground];
+
 }
+
 @end

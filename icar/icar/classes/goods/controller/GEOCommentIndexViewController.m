@@ -37,7 +37,7 @@
 	self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchAllServiceRequest managedObjectContext:self.iCarDatabase.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
 }
 
-#define JSON_URL_COMMENT @"http://127.0.0.1:3000"
+#define JSON_URL_COMMENT @"https://api.mongolab.com/api/1/databases/yangche-geo/collections/comments?apiKey=1gdxdp157X9xPkkGHFsH4MYBWWYaS37o"
 #pragma mark - fetch from server
 - (void) fetchDataFromServer{
 	
@@ -93,7 +93,7 @@
 	}else if (self.iCarDatabase.documentState == UIDocumentStateNormal){
 		// 设置好FetchResultController 等待数据变化
 		[self setupFetchResultController];
-		[self fetchDataFromServer];
+		
 	}
 }
 

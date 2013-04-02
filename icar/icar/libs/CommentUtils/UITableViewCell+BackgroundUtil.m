@@ -9,7 +9,7 @@
 #import "UITableViewCell+BackgroundUtil.h"
 #import <QuartzCore/QuartzCore.h>
 @implementation UITableViewCell (BackgroundUtil)
-- (void)addBackground{
+- (void)addGradientBackground{
 	//渐变色背景 垂直渐变
 	CAGradientLayer* backgroundLayer = [CAGradientLayer layer];
 	backgroundLayer.frame = self.bounds;
@@ -20,5 +20,12 @@
 	}
 	[self.contentView.layer insertSublayer:backgroundLayer atIndex:0];
 
+}
+
+- (void) addColorBackground{
+	CALayer* backgroudLayer = [CALayer layer];
+	backgroudLayer.frame = self.bounds;
+	backgroudLayer.backgroundColor = [UIColor whiteColor].CGColor;
+	[self.contentView.layer insertSublayer:backgroudLayer atIndex:0];
 }
 @end

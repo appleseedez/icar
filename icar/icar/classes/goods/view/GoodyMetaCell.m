@@ -13,7 +13,7 @@
 
 - (void)drawRect:(CGRect)rect{
 	[super drawRect:rect];
-	[self addBackground];
+	[self addGradientBackground];
 	[self.nameLabel addBorderAtBottomWithFrame:CGRectMake(0, self.nameLabel.bounds.size.height+4, self.nameLabel.bounds.size.width, .5)];
 	
 }

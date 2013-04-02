@@ -32,7 +32,7 @@
 	[self.gallaryThumbView addBorder];
 	[self.galleryThumbView2 addBorder];
 	[self.gallaryThumbView3 addBorder];
-	[self addBackground];
+	[self addGradientBackground];
 	
 }
 

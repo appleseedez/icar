@@ -15,6 +15,6 @@
 	[super drawRect:rect];
 	[self.thumbView addBorder];
 	[self.nameLabel addBorderAtBottomWithFrame:CGRectMake(0, self.nameLabel.bounds.size.height-2, self.nameLabel.bounds.size.width+8, .5)];
-	[self addBackground];
+	[self addGradientBackground];
 }
 @end

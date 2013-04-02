@@ -12,9 +12,10 @@
 - (void)addBorder{
 	
 	CALayer* innerBorder = [CALayer layer];
-	innerBorder.borderColor = [UIColor colorWithRed:0.949 green:0.949 blue:0.949 alpha:1].CGColor; // #f2f2f2;
-	innerBorder.borderWidth = (self.bounds.size.width / 15.0);
+	innerBorder.borderColor = [UIColor whiteColor].CGColor;// [UIColor colorWithRed:0.949 green:0.949 blue:0.949 alpha:1].CGColor; // #f2f2f2;
+	innerBorder.borderWidth = (self.bounds.size.width*.08);
 	innerBorder.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+	self.backgroundColor = [UIColor colorWithRed:0.949 green:0.949 blue:0.949 alpha:1];
 	[self.layer addSublayer:innerBorder];
 	
 	[self.layer setBorderColor:[UIColor colorWithRed:0.871 green:0.871 blue:0.871 alpha:1].CGColor];
