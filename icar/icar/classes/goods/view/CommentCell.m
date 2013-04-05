@@ -13,6 +13,6 @@
 - (void)drawRect:(CGRect)rect{
 	[super drawRect:rect];
 	[self.thumbView addBorder];
-	[self addGradientBackground];
+	[self addColorBackground];
 }
 @end

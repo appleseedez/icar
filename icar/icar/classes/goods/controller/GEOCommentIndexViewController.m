@@ -93,7 +93,7 @@
 	}else if (self.iCarDatabase.documentState == UIDocumentStateNormal){
 		// 设置好FetchResultController 等待数据变化
 		[self setupFetchResultController];
-		
+		[self fetchDataFromServer];
 	}
 }
 
@@ -112,7 +112,7 @@
 	cell.comentLabel.text = comment.body;
 	[cell.comentLabel sizeToFit];
 	
-	[cell.thumbView setImageWithURL:[NSURL URLWithString:comment.thumb] placeholderImage:[UIImage imageNamed:@"index-thumb"]];
+	[cell.thumbView setImageWithURL:[NSURL URLWithString:comment.thumb] placeholderImage:[UIImage imageNamed:@"index-thumb2@2x.jpg"]];
 	
 	return cell;
 }

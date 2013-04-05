@@ -21,7 +21,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="index-thumb" id="9sV-hN-tOn">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="index-thumb" id="9sV-hN-tOn">
                                             <rect key="frame" x="20" y="16" width="48" height="48"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -132,16 +132,22 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="yEb-Bl-Aqz">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GoodyProviderCell" rowHeight="48" id="907-ev-hYM" customClass="GoodyProviderCell">
+                            <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="GoodyProviderCell" rowHeight="48" id="907-ev-hYM" customClass="GoodyProviderCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="index-thumb" id="UcE-hh-GB8">
+                                        <view alpha="0.90000000000000002" contentMode="scaleToFill" id="rLg-OH-sqM">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="32"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                        </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="index-thumb2@2x.jpg" id="UcE-hh-GB8">
                                             <rect key="frame" x="271" y="9" width="30" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -180,14 +186,16 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="成都宝马汽车养护保养一条龙公司" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="uAY-Wk-ocd">
                                             <rect key="frame" x="21" y="4" width="242" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="STHeitiSC-Light" family="Heiti SC" pointSize="12"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="backGroundView" destination="rLg-OH-sqM" id="6NO-r4-gi7"/>
                                     <outlet property="nameLabel" destination="uAY-Wk-ocd" id="HUS-lS-43B"/>
                                     <outlet property="thumbView" destination="UcE-hh-GB8" id="RqS-U3-27S"/>
                                 </connections>
@@ -324,15 +332,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="119"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" image="index-thumb" id="yAn-Jd-sUF">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="index-thumb2@2x.jpg" id="yAn-Jd-sUF">
                                                     <rect key="frame" x="20" y="20" width="80" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" image="index-thumb" id="NI4-1z-arh">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="index-thumb2@2x.jpg" id="NI4-1z-arh">
                                                     <rect key="frame" x="120" y="20" width="80" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="center" image="index-thumb" id="FGg-8b-hFs">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="index-thumb2@2x.jpg" id="FGg-8b-hFs">
                                                     <rect key="frame" x="220" y="20" width="80" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
@@ -669,7 +677,8 @@
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aA9-GE-e9f">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentCell" rowHeight="58" id="wTB-u7-Iiw" customClass="CommentCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="58"/>
@@ -707,7 +716,7 @@
                                             <rect key="frame" x="58" y="31" width="242" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
@@ -830,102 +839,11 @@
         <image name="index-location-btn" width="16" height="16"/>
         <image name="index-tab" width="16" height="16"/>
         <image name="index-thumb" width="16" height="16"/>
+        <image name="index-thumb2@2x.jpg" width="160" height="160"/>
         <image name="like" width="16" height="16"/>
         <image name="search-refresh" width="16" height="16"/>
         <image name="write-comment" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="AutoDetectHeightUILabel" superclassName="UILabel">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AutoDetectHeightUILabel.h"/>
-        </class>
-        <class className="CommentCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="comentLabel" candidateClass="AutoDetectHeightUILabel"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="thumbView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="CoreDataTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CoreDataTableViewController.h"/>
-        </class>
-        <class className="GEOCommentIndexViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOCommentIndexViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="close:" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="GEOComposeCommentViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOComposeCommentViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="close:" candidateClass="UIButton"/>
-                <relationship kind="action" name="deliver:" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="GEOGoodsDetailViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOGoodsDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="close:" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="GEOGoodsIndexViewController" superclassName="CoreDataTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOGoodsIndexViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backToHome:" candidateClass="UIButton"/>
-                <relationship kind="action" name="refreshIndex:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="refreshIndexButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="GEOGoodsLocationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOGoodsLocationViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="close:"/>
-            </relationships>
-        </class>
-        <class className="GoodsIndexCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoodsIndexCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addressLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="serviceTitleLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="thumbView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="totalScoreLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GoodyGalleryCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoodyGalleryCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="gallaryThumbView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="gallaryThumbView3" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="galleryThumbView2" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="GoodyMetaCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoodyMetaCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="accordScoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="addressLabel" candidateClass="AutoDetectHeightUILabel"/>
-                <relationship kind="outlet" name="attitudeScoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="envScoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pvCountLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="qualityScoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="totalScoreLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="updateTimeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="GoodyProviderCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GoodyProviderCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="thumbView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

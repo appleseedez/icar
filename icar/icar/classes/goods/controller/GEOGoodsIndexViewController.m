@@ -16,6 +16,7 @@
 @interface GEOGoodsIndexViewController ()
 @property (nonatomic,readonly) CLLocationManager* locationManager;
 @property (nonatomic) BOOL lock; // 防止定位过程中多次调用useDoument导致多次打开UIDocument的错误
+@property (nonatomic) BOOL willFetchFromRemoteServerSwitch; // 确定是否去服务端取数据
 @end
 
 @implementation GEOGoodsIndexViewController
@@ -29,6 +30,7 @@
 		self.iCarDatabase = [[CoreDataManager share] managedDocument];
 	}
 	self.lock = NO;
+	self.willFetchFromRemoteServerSwitch = NO;
 	// 检测是否开启定位
 	if ([CLLocationManager locationServicesEnabled]) {
 		self.locationManager.delegate=self;
@@ -222,10 +224,13 @@
  */
 #pragma  mark - open database document
 - (void) useDocument{
+	
 	if (self.lock) {
 		return;
 	}
 	self.lock = YES;
+	
+	
 	
 	if (![[NSFileManager defaultManager] fileExistsAtPath:[self.iCarDatabase.fileURL path]]) {
 		[self.iCarDatabase saveToURL:self.iCarDatabase.fileURL forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
@@ -240,13 +245,25 @@
 			self.lock = NO;
 			// 设置好FetchResultController 等待数据变化
 			[self setupFetchResultController];
-			[self updateDistanceToCurrentLocation:self.currentLocation fromLastLocation:self.lastLocation];
+			if (self.willFetchFromRemoteServerSwitch) {
+				[self fetchDataFromServer];
+				self.willFetchFromRemoteServerSwitch = NO;
+			}else{
+				[self updateDistanceToCurrentLocation:self.currentLocation fromLastLocation:self.lastLocation];
+			}
 			
+						
 		}];
 	}else if (self.iCarDatabase.documentState == UIDocumentStateNormal){
+		self.lock = NO;
 		// 设置好FetchResultController 等待数据变化
 		[self setupFetchResultController];
-		[self updateDistanceToCurrentLocation:self.currentLocation fromLastLocation:self.lastLocation];
+		if (self.willFetchFromRemoteServerSwitch) {
+			[self fetchDataFromServer];
+			self.willFetchFromRemoteServerSwitch = NO;
+		}else{
+			[self updateDistanceToCurrentLocation:self.currentLocation fromLastLocation:self.lastLocation];
+		}
 	}
 }
 
@@ -267,13 +284,14 @@
  用户刷新
  获取用户位置. 更新距离
  */
-- (void)refreshIndex:(UIButton *)refreshButton{
+- (IBAction)refreshIndex:(UIButton *)refreshButton{
+	self.willFetchFromRemoteServerSwitch = YES;
 	[self.locationManager startUpdatingLocation];
 }
 /*
  返回首页
  */
-- (void)backToHome:(UIButton *)homeButton{
+- (IBAction)backToHome:(UIButton *)homeButton{
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)viewDidUnload {

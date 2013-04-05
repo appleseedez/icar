@@ -22,9 +22,9 @@
 	[self.layer setBorderWidth:.5];
 	
 	CALayer *bottomBorderLayer = [CALayer layer];
-	bottomBorderLayer.borderColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1].CGColor;
+	bottomBorderLayer.borderColor = [UIColor colorWithRed:0.878 green:0.878 blue:0.878 alpha:.5].CGColor;
 	bottomBorderLayer.borderWidth = 4;
-	bottomBorderLayer.frame = CGRectMake(2, self.bounds.size.height, self.bounds.size.width-4, .5);
+	bottomBorderLayer.frame = CGRectMake(0, self.bounds.size.height, self.bounds.size.width, 1);
 	[self.layer addSublayer:bottomBorderLayer];
 }
 @end

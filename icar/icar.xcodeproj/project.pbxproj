@@ -124,6 +124,8 @@
 		1887B88A17034F1600227C37 /* UIStoryboardSegue+TopLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1887B88417034F1600227C37 /* UIStoryboardSegue+TopLevelViewController.m */; };
 		1887B88B17034F1600227C37 /* UITableViewCell+BackgroundUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1887B88617034F1600227C37 /* UITableViewCell+BackgroundUtil.m */; };
 		1887B88E1703591D00227C37 /* Goody.m in Sources */ = {isa = PBXBuildFile; fileRef = 1887B88D1703591D00227C37 /* Goody.m */; };
+		18C4AA6A170ED6F1003A12DA /* index-thumb2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18C4AA69170ED6F1003A12DA /* index-thumb2@2x.jpg */; };
+		18C4AA6B170ED6F1003A12DA /* index-thumb2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18C4AA69170ED6F1003A12DA /* index-thumb2@2x.jpg */; };
 		18F784F317044F1000864420 /* GEOBaiduMapManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 18F784F217044F1000864420 /* GEOBaiduMapManager.mm */; };
 		18F784FA1704708200864420 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18F784F91704708200864420 /* libbaidumapapi.a */; };
 		18F785061704875900864420 /* AutoDetectHeightUILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F785051704875900864420 /* AutoDetectHeightUILabel.m */; };
@@ -330,6 +332,7 @@
 		1887B88617034F1600227C37 /* UITableViewCell+BackgroundUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+BackgroundUtil.m"; sourceTree = "<group>"; };
 		1887B88C1703591D00227C37 /* Goody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goody.h; sourceTree = "<group>"; };
 		1887B88D1703591D00227C37 /* Goody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goody.m; sourceTree = "<group>"; };
+		18C4AA69170ED6F1003A12DA /* index-thumb2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "index-thumb2@2x.jpg"; sourceTree = "<group>"; };
 		18F784F117044F1000864420 /* GEOBaiduMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOBaiduMapManager.h; sourceTree = "<group>"; };
 		18F784F217044F1000864420 /* GEOBaiduMapManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GEOBaiduMapManager.mm; sourceTree = "<group>"; };
 		18F784F91704708200864420 /* libbaidumapapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbaidumapapi.a; sourceTree = "<group>"; };
@@ -579,6 +582,7 @@
 		187B428017011A0400331F3B /* background */ = {
 			isa = PBXGroup;
 			children = (
+				18C4AA69170ED6F1003A12DA /* index-thumb2@2x.jpg */,
 				187B432A170155BA00331F3B /* adv@2x.png */,
 				187B432817014EC600331F3B /* index-background@2x.png */,
 				187B431C17014B5900331F3B /* faq@2x.png */,
@@ -994,6 +998,7 @@
 				1850B1351705885C009FBEBD /* deliver.png in Resources */,
 				1850B1361705885C009FBEBD /* deliver@2x.png in Resources */,
 				1851095917067AF100563E4E /* GEOMyCenter.storyboard in Resources */,
+				18C4AA6A170ED6F1003A12DA /* index-thumb2@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1002,6 +1007,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				187B42721701192600331F3B /* InfoPlist.strings in Resources */,
+				18C4AA6B170ED6F1003A12DA /* index-thumb2@2x.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
