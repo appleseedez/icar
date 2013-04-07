@@ -12,6 +12,7 @@
 #import "GoodyGalleryCell.h"
 @interface GEOGoodsDetailViewController : UITableViewController
 - (IBAction)close:(UIButton*)closeButton;
+- (IBAction)showDate:(UIBarButtonItem *)sender;
 @property (nonatomic) CLLocation* goodyLocation;
 @property (nonatomic,weak) NSString* goodyId;
 @end

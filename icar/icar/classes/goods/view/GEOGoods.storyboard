@@ -368,7 +368,11 @@
                         <sections/>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem image="add-to-order" width="44" style="plain" id="WQf-7q-xqS"/>
+                        <barButtonItem image="clock" width="44" style="plain" id="WQf-7q-xqS">
+                            <connections>
+                                <action selector="showDate:" destination="Ruf-Uf-BoC" id="7yC-tF-lem"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="KtZ-4f-EC5"/>
                         <barButtonItem image="contact-button" width="44" style="plain" id="kM9-au-qfM"/>
                         <barButtonItem image="like" width="44" style="plain" id="3vf-U8-LaA"/>
@@ -831,7 +835,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="add-to-order" width="16" height="16"/>
+        <image name="clock" width="16" height="16"/>
         <image name="close-button" width="16" height="16"/>
         <image name="comment-button" width="16" height="16"/>
         <image name="contact-button" width="16" height="16"/>

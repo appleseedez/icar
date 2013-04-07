@@ -124,6 +124,20 @@
 		1887B88A17034F1600227C37 /* UIStoryboardSegue+TopLevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1887B88417034F1600227C37 /* UIStoryboardSegue+TopLevelViewController.m */; };
 		1887B88B17034F1600227C37 /* UITableViewCell+BackgroundUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1887B88617034F1600227C37 /* UITableViewCell+BackgroundUtil.m */; };
 		1887B88E1703591D00227C37 /* Goody.m in Sources */ = {isa = PBXBuildFile; fileRef = 1887B88D1703591D00227C37 /* Goody.m */; };
+		18979B6317113AAF0028496A /* GEOLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18979B6217113AAF0028496A /* GEOLoginViewController.m */; };
+		18979B6917113D550028496A /* GEOLoginHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18979B6817113D540028496A /* GEOLoginHeaderView.m */; };
+		18979B70171148040028496A /* register-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 18979B6E171148040028496A /* register-button.png */; };
+		18979B71171148040028496A /* register-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18979B6F171148040028496A /* register-button@2x.png */; };
+		18979B74171149DF0028496A /* login-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 18979B72171149DF0028496A /* login-button.png */; };
+		18979B75171149DF0028496A /* login-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18979B73171149DF0028496A /* login-button@2x.png */; };
+		18979B7B17114CFD0028496A /* GEOSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18979B7A17114CFD0028496A /* GEOSettingsViewController.m */; };
+		18A7EE3C1711A37D00A7207B /* GEOInputAccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A7EE3B1711A37D00A7207B /* GEOInputAccessoryView.xib */; };
+		18A7EE3F1711A3CD00A7207B /* GEOInputAccessoryToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A7EE3E1711A3CD00A7207B /* GEOInputAccessoryToolbar.m */; };
+		18A7EE421711A88C00A7207B /* ok.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A7EE401711A88C00A7207B /* ok.png */; };
+		18A7EE431711A88C00A7207B /* ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A7EE411711A88C00A7207B /* ok@2x.png */; };
+		18A7EE461711D29D00A7207B /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A7EE441711D29D00A7207B /* clock.png */; };
+		18A7EE471711D29D00A7207B /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A7EE451711D29D00A7207B /* clock@2x.png */; };
+		18C426FE1710316B00A0DA8A /* GEOLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C426FD1710316B00A0DA8A /* GEOLogin.storyboard */; };
 		18C4AA6A170ED6F1003A12DA /* index-thumb2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18C4AA69170ED6F1003A12DA /* index-thumb2@2x.jpg */; };
 		18C4AA6B170ED6F1003A12DA /* index-thumb2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18C4AA69170ED6F1003A12DA /* index-thumb2@2x.jpg */; };
 		18F784F317044F1000864420 /* GEOBaiduMapManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 18F784F217044F1000864420 /* GEOBaiduMapManager.mm */; };
@@ -332,6 +346,24 @@
 		1887B88617034F1600227C37 /* UITableViewCell+BackgroundUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+BackgroundUtil.m"; sourceTree = "<group>"; };
 		1887B88C1703591D00227C37 /* Goody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goody.h; sourceTree = "<group>"; };
 		1887B88D1703591D00227C37 /* Goody.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goody.m; sourceTree = "<group>"; };
+		18979B6117113AAF0028496A /* GEOLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOLoginViewController.h; sourceTree = "<group>"; };
+		18979B6217113AAF0028496A /* GEOLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEOLoginViewController.m; sourceTree = "<group>"; };
+		18979B6717113D540028496A /* GEOLoginHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOLoginHeaderView.h; sourceTree = "<group>"; };
+		18979B6817113D540028496A /* GEOLoginHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEOLoginHeaderView.m; sourceTree = "<group>"; };
+		18979B6E171148040028496A /* register-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register-button.png"; sourceTree = "<group>"; };
+		18979B6F171148040028496A /* register-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register-button@2x.png"; sourceTree = "<group>"; };
+		18979B72171149DF0028496A /* login-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button.png"; sourceTree = "<group>"; };
+		18979B73171149DF0028496A /* login-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button@2x.png"; sourceTree = "<group>"; };
+		18979B7917114CFD0028496A /* GEOSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOSettingsViewController.h; sourceTree = "<group>"; };
+		18979B7A17114CFD0028496A /* GEOSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEOSettingsViewController.m; sourceTree = "<group>"; };
+		18A7EE3B1711A37D00A7207B /* GEOInputAccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GEOInputAccessoryView.xib; sourceTree = "<group>"; };
+		18A7EE3D1711A3CC00A7207B /* GEOInputAccessoryToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOInputAccessoryToolbar.h; sourceTree = "<group>"; };
+		18A7EE3E1711A3CD00A7207B /* GEOInputAccessoryToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEOInputAccessoryToolbar.m; sourceTree = "<group>"; };
+		18A7EE401711A88C00A7207B /* ok.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ok.png; sourceTree = "<group>"; };
+		18A7EE411711A88C00A7207B /* ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ok@2x.png"; sourceTree = "<group>"; };
+		18A7EE441711D29D00A7207B /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		18A7EE451711D29D00A7207B /* clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock@2x.png"; sourceTree = "<group>"; };
+		18C426FD1710316B00A0DA8A /* GEOLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GEOLogin.storyboard; sourceTree = "<group>"; };
 		18C4AA69170ED6F1003A12DA /* index-thumb2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "index-thumb2@2x.jpg"; sourceTree = "<group>"; };
 		18F784F117044F1000864420 /* GEOBaiduMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOBaiduMapManager.h; sourceTree = "<group>"; };
 		18F784F217044F1000864420 /* GEOBaiduMapManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = GEOBaiduMapManager.mm; sourceTree = "<group>"; };
@@ -377,6 +409,8 @@
 		182FB1941702F77000D01D20 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				18979B7617114CE80028496A /* settings */,
+				18C426FA171030E500A0DA8A /* login */,
 				185109551706780900563E4E /* my */,
 				187B432F170188FD00331F3B /* goods */,
 				187B432C1701888700331F3B /* index */,
@@ -602,6 +636,14 @@
 		187B428517011A0400331F3B /* common */ = {
 			isa = PBXGroup;
 			children = (
+				18A7EE441711D29D00A7207B /* clock.png */,
+				18A7EE451711D29D00A7207B /* clock@2x.png */,
+				18A7EE401711A88C00A7207B /* ok.png */,
+				18A7EE411711A88C00A7207B /* ok@2x.png */,
+				18979B72171149DF0028496A /* login-button.png */,
+				18979B73171149DF0028496A /* login-button@2x.png */,
+				18979B6E171148040028496A /* register-button.png */,
+				18979B6F171148040028496A /* register-button@2x.png */,
 				1850B1331705885C009FBEBD /* deliver.png */,
 				1850B1341705885C009FBEBD /* deliver@2x.png */,
 				187B428617011A0400331F3B /* close-button.png */,
@@ -816,6 +858,9 @@
 				187B433917018ADE00331F3B /* GEOGoods.storyboard */,
 				1850B13717058BDA009FBEBD /* CommentCell.h */,
 				1850B13817058BDA009FBEBD /* CommentCell.m */,
+				18A7EE3B1711A37D00A7207B /* GEOInputAccessoryView.xib */,
+				18A7EE3D1711A3CC00A7207B /* GEOInputAccessoryToolbar.h */,
+				18A7EE3E1711A3CD00A7207B /* GEOInputAccessoryToolbar.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -858,6 +903,59 @@
 				1887B88617034F1600227C37 /* UITableViewCell+BackgroundUtil.m */,
 			);
 			path = CommentUtils;
+			sourceTree = "<group>";
+		};
+		18979B7617114CE80028496A /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				18979B7717114CE80028496A /* controller */,
+				18979B7817114CE80028496A /* view */,
+			);
+			path = settings;
+			sourceTree = "<group>";
+		};
+		18979B7717114CE80028496A /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				18979B7917114CFD0028496A /* GEOSettingsViewController.h */,
+				18979B7A17114CFD0028496A /* GEOSettingsViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		18979B7817114CE80028496A /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		18C426FA171030E500A0DA8A /* login */ = {
+			isa = PBXGroup;
+			children = (
+				18C426FB1710310100A0DA8A /* controller */,
+				18C426FC1710310100A0DA8A /* view */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		18C426FB1710310100A0DA8A /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				18979B6117113AAF0028496A /* GEOLoginViewController.h */,
+				18979B6217113AAF0028496A /* GEOLoginViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		18C426FC1710310100A0DA8A /* view */ = {
+			isa = PBXGroup;
+			children = (
+				18C426FD1710316B00A0DA8A /* GEOLogin.storyboard */,
+				18979B6717113D540028496A /* GEOLoginHeaderView.h */,
+				18979B6817113D540028496A /* GEOLoginHeaderView.m */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -999,6 +1097,16 @@
 				1850B1361705885C009FBEBD /* deliver@2x.png in Resources */,
 				1851095917067AF100563E4E /* GEOMyCenter.storyboard in Resources */,
 				18C4AA6A170ED6F1003A12DA /* index-thumb2@2x.jpg in Resources */,
+				18C426FE1710316B00A0DA8A /* GEOLogin.storyboard in Resources */,
+				18979B70171148040028496A /* register-button.png in Resources */,
+				18979B71171148040028496A /* register-button@2x.png in Resources */,
+				18979B74171149DF0028496A /* login-button.png in Resources */,
+				18979B75171149DF0028496A /* login-button@2x.png in Resources */,
+				18A7EE3C1711A37D00A7207B /* GEOInputAccessoryView.xib in Resources */,
+				18A7EE421711A88C00A7207B /* ok.png in Resources */,
+				18A7EE431711A88C00A7207B /* ok@2x.png in Resources */,
+				18A7EE461711D29D00A7207B /* clock.png in Resources */,
+				18A7EE471711D29D00A7207B /* clock@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,6 +1184,10 @@
 				1850B14B1705D227009FBEBD /* Comment.m in Sources */,
 				18142A2F170BCC7B00F1E42C /* GEOMyCenterViewController.m in Sources */,
 				18142A32170BE73B00F1E42C /* GEOMyCenterProfileView.m in Sources */,
+				18979B6317113AAF0028496A /* GEOLoginViewController.m in Sources */,
+				18979B6917113D550028496A /* GEOLoginHeaderView.m in Sources */,
+				18979B7B17114CFD0028496A /* GEOSettingsViewController.m in Sources */,
+				18A7EE3F1711A3CD00A7207B /* GEOInputAccessoryToolbar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

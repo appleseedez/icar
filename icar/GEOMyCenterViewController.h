@@ -11,4 +11,8 @@
 @interface GEOMyCenterViewController : UITableViewController
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 
+- (IBAction)wantLogin:(UIButton *)sender;
+- (IBAction)wantRegiter:(UIButton *)sender;
+
+
 @end

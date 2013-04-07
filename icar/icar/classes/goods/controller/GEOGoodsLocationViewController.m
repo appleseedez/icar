@@ -20,6 +20,9 @@
 	if (self.baiduMapManager ==nil) {
 		self.baiduMapManager = [[GEOBaiduMapManager share] bmManager];
 		BOOL ret = [self.baiduMapManager start:@"231E84632DE2DEBCA976E3ADF8E0732C9642006A" generalDelegate:nil];
+		if (!ret) {
+			//
+		}
 		NSAssert(ret == YES, @"百度地图启动失败了");
 		
 	}

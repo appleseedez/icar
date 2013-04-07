@@ -7,10 +7,11 @@
 //
 
 #import "GEOGoodsDetailViewController.h"
-
+#import "GEOInputAccessoryToolbar.h"
 @interface GEOGoodsDetailViewController ()
 @property (nonatomic) NSMutableArray* protoypeCellHeight;
-
+@property (nonatomic) UITextField* field;
+@property (nonatomic) GEOInputAccessoryToolbar* inputAccessoryToolbar;
 @end
 
 @implementation GEOGoodsDetailViewController
@@ -18,10 +19,19 @@
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
 	self.protoypeCellHeight = [@[@(160.0f),@(120.0f)] mutableCopy];
+	
+	self.field = [[UITextField alloc] initWithFrame:CGRectZero];
+	[self.navigationController.toolbar addSubview:self.field];
 }
 
+- (void) viewWillDisappear:(BOOL)animated{
+	[super viewWillDisappear:animated];
+	[self.field removeFromSuperview];
+	self.field = nil;
+}
 - (void)viewDidLoad{
 	self.goodyLocation = [[CLLocation alloc] initWithLatitude:30.66155 longitude:104.05008];
+	
 }
 
 #pragma mark - Table view data source
@@ -90,10 +100,11 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
 	static NSString* HeaderCellIdentifier = @"GoodyProviderCell";
-	UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:HeaderCellIdentifier];
+	GoodyProviderCell* cell = [tableView dequeueReusableCellWithIdentifier:HeaderCellIdentifier];
 	if (nil == cell) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:HeaderCellIdentifier];
+		cell = [[GoodyProviderCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:HeaderCellIdentifier];
 	}
+
 	return cell;
 	
 }
@@ -113,8 +124,30 @@
 	}
 }
 #pragma mark - actions
-- (void)close:(UIButton *)closeButton{
+
+- (void) hideKeyBoard{
+	[self.field resignFirstResponder];
+}
+
+- (IBAction)close:(UIButton *)closeButton{
 	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+- (IBAction)showDate:(UIBarButtonItem *)sender {
+	self.field.inputView = [[UIDatePicker alloc] init];
+	if (!self.inputAccessoryToolbar) {
+		self.inputAccessoryToolbar = [[GEOInputAccessoryToolbar alloc] init];
+	}
+	self.inputAccessoryToolbar.hideKeyboardButton.target = self;
+	self.inputAccessoryToolbar.hideKeyboardButton.action = @selector(hideKeyBoard);
+	
+	self.field.inputAccessoryView = self.inputAccessoryToolbar;
+	
+	
+	[self.field becomeFirstResponder];
+	
 }
 
 
