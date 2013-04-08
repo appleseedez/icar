@@ -10,6 +10,8 @@
 
 @interface GEOLoginViewController ()
 @property(nonatomic) UIView* backGroundView;
+
+
 @end
 
 @implementation GEOLoginViewController
@@ -38,5 +40,16 @@
 
 	[self setHeaderView:nil];
 	[super viewDidUnload];
+}
+
+
+- (IBAction)doLogin:(UIButton *)sender {
+	///NSAssert(self.successBlock == nil, @"opps");
+	if (YES && self.successBlock) {
+		[self dismissViewControllerAnimated:YES completion:^{
+			self.successBlock();
+		}];
+		
+	}
 }
 @end

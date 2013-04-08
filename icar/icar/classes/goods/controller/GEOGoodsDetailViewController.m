@@ -8,6 +8,7 @@
 
 #import "GEOGoodsDetailViewController.h"
 #import "GEOInputAccessoryToolbar.h"
+#import "UIViewController+LoginManager.h"
 @interface GEOGoodsDetailViewController ()
 @property (nonatomic) NSMutableArray* protoypeCellHeight;
 @property (nonatomic) UITextField* field;
@@ -97,7 +98,7 @@
 	return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"BlankCell"];
 }
 
-
+ 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
 	static NSString* HeaderCellIdentifier = @"GoodyProviderCell";
 	GoodyProviderCell* cell = [tableView dequeueReusableCellWithIdentifier:HeaderCellIdentifier];
@@ -136,18 +137,24 @@
 
 
 - (IBAction)showDate:(UIBarButtonItem *)sender {
-	self.field.inputView = [[UIDatePicker alloc] init];
-	if (!self.inputAccessoryToolbar) {
-		self.inputAccessoryToolbar = [[GEOInputAccessoryToolbar alloc] init];
-	}
-	self.inputAccessoryToolbar.hideKeyboardButton.target = self;
-	self.inputAccessoryToolbar.hideKeyboardButton.action = @selector(hideKeyBoard);
 	
-	self.field.inputAccessoryView = self.inputAccessoryToolbar;
-	
-	
-	[self.field becomeFirstResponder];
-	
+	// 此处要求登录
+	[self checkLoginWithSuccessBlock:^{
+		//
+		self.field.inputView = [[UIDatePicker alloc] init];
+		if (!self.inputAccessoryToolbar) {
+			self.inputAccessoryToolbar = [[GEOInputAccessoryToolbar alloc] init];
+		}
+		self.inputAccessoryToolbar.hideKeyboardButton.target = self;
+		self.inputAccessoryToolbar.hideKeyboardButton.action = @selector(hideKeyBoard);
+		
+		self.field.inputAccessoryView = self.inputAccessoryToolbar;
+		
+		
+		[self.field becomeFirstResponder];
+	} failBlock:^{
+		//
+	}];
 }
 
 

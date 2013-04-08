@@ -137,6 +137,7 @@
 		18A7EE431711A88C00A7207B /* ok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A7EE411711A88C00A7207B /* ok@2x.png */; };
 		18A7EE461711D29D00A7207B /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A7EE441711D29D00A7207B /* clock.png */; };
 		18A7EE471711D29D00A7207B /* clock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18A7EE451711D29D00A7207B /* clock@2x.png */; };
+		18B6C7DE1712B30100B47F3D /* UIViewController+LoginManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B6C7DD1712B30100B47F3D /* UIViewController+LoginManager.m */; };
 		18C426FE1710316B00A0DA8A /* GEOLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18C426FD1710316B00A0DA8A /* GEOLogin.storyboard */; };
 		18C4AA6A170ED6F1003A12DA /* index-thumb2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18C4AA69170ED6F1003A12DA /* index-thumb2@2x.jpg */; };
 		18C4AA6B170ED6F1003A12DA /* index-thumb2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 18C4AA69170ED6F1003A12DA /* index-thumb2@2x.jpg */; };
@@ -363,6 +364,8 @@
 		18A7EE411711A88C00A7207B /* ok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ok@2x.png"; sourceTree = "<group>"; };
 		18A7EE441711D29D00A7207B /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
 		18A7EE451711D29D00A7207B /* clock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock@2x.png"; sourceTree = "<group>"; };
+		18B6C7DC1712B30100B47F3D /* UIViewController+LoginManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+LoginManager.h"; sourceTree = "<group>"; };
+		18B6C7DD1712B30100B47F3D /* UIViewController+LoginManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+LoginManager.m"; sourceTree = "<group>"; };
 		18C426FD1710316B00A0DA8A /* GEOLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GEOLogin.storyboard; sourceTree = "<group>"; };
 		18C4AA69170ED6F1003A12DA /* index-thumb2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "index-thumb2@2x.jpg"; sourceTree = "<group>"; };
 		18F784F117044F1000864420 /* GEOBaiduMapManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOBaiduMapManager.h; sourceTree = "<group>"; };
@@ -901,6 +904,8 @@
 				1887B88417034F1600227C37 /* UIStoryboardSegue+TopLevelViewController.m */,
 				1887B88517034F1600227C37 /* UITableViewCell+BackgroundUtil.h */,
 				1887B88617034F1600227C37 /* UITableViewCell+BackgroundUtil.m */,
+				18B6C7DC1712B30100B47F3D /* UIViewController+LoginManager.h */,
+				18B6C7DD1712B30100B47F3D /* UIViewController+LoginManager.m */,
 			);
 			path = CommentUtils;
 			sourceTree = "<group>";
@@ -1188,6 +1193,7 @@
 				18979B6917113D550028496A /* GEOLoginHeaderView.m in Sources */,
 				18979B7B17114CFD0028496A /* GEOSettingsViewController.m in Sources */,
 				18A7EE3F1711A3CD00A7207B /* GEOInputAccessoryToolbar.m in Sources */,
+				18B6C7DE1712B30100B47F3D /* UIViewController+LoginManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
