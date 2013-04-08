@@ -12,6 +12,9 @@
 @property(nonatomic) UIView* backGroundView;
 
 
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
+
+
 @end
 
 @implementation GEOLoginViewController
@@ -30,8 +33,17 @@
 	bottomBorderLayer.borderWidth = 4;
 	bottomBorderLayer.frame = CGRectMake(0, self.headerView.bounds.size.height, self.headerView.bounds.size.width, 1);
 	[self.headerView.layer addSublayer:bottomBorderLayer];
-	
+
+
+	[self.loginButton.layer setBorderColor:[UIColor clearColor].CGColor];
+	[self.loginButton.layer setBorderWidth:1];
+	[self.loginButton.layer setCornerRadius:3];
+	self.loginButton.clipsToBounds = YES;
 }
+
+
+
+
 
 - (IBAction)closeLoginView:(UIButton *)sender {
 	[self dismissViewControllerAnimated:YES completion:nil];
@@ -39,6 +51,8 @@
 - (void)viewDidUnload {
 
 	[self setHeaderView:nil];
+
+	[self setLoginButton:nil];
 	[super viewDidUnload];
 }
 
