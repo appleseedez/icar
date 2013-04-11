@@ -48,5 +48,9 @@
 //	[cell.oldPriceLabel addBorderAtMid];
 	return cell;
 }
-
+#pragma  mark - actions
+- (IBAction)closeModal:(UIButton *)sender {
+	[self dismissViewControllerAnimated:YES completion:nil];
+	
+}
 @end

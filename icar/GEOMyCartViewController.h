@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface GEOMyCartViewController : PSUICollectionViewController
+- (IBAction)closeModal:(UIButton *)sender;
 
 @end
