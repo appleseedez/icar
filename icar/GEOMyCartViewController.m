@@ -17,7 +17,7 @@
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
 	self.collectionView.collectionViewLayout = [[GEOCartItemThumbLayout alloc] init];
-	//[self.collectionView registerClass:[CartItemCell class] forCellWithReuseIdentifier:@"CartItemCell"];
+	
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(PSUICollectionView *)collectionView{
@@ -44,6 +44,8 @@
 - (PSUICollectionViewCell *)collectionView:(PSUICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
 	static NSString* CollectionViewCellIdentifier = @"CartItemCell";
 	CartItemCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:CollectionViewCellIdentifier forIndexPath:indexPath];
+//	
+//	[cell.oldPriceLabel addBorderAtMid];
 	return cell;
 }
 

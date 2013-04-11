@@ -10,9 +10,8 @@
 
 @implementation GoodsIndexCell
 
-- (void)drawRect:(CGRect)rect{
-	[super drawRect:rect];
+- (void)awakeFromNib{
+	[super awakeFromNib];
 	[self.thumbView addBorder];
-	[self addColorBackground];
 }
 @end

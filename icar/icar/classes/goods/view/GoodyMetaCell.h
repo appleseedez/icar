@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AutoDetectHeightUILabel.h"
-@interface GoodyMetaCell : UITableViewCell
+#import "GEOGenericCell.h"
+@interface GoodyMetaCell : GEOGenericCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalScoreLabel;

@@ -10,11 +10,9 @@
 
 @implementation GEOMyCenterProfileView
 
-
-- (void)drawRect:(CGRect)rect
-{
-	[super drawRect:rect];
+- (void)awakeFromNib{
 	[self.thumbView addBorder];
+	[super awakeFromNib];
 }
 
 

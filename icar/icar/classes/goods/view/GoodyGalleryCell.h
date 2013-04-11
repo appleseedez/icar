@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface GoodyGalleryCell : UITableViewCell
+#import "GEOGenericCell.h"
+@interface GoodyGalleryCell : GEOGenericCell
 @property (weak, nonatomic) IBOutlet UIImageView *gallaryThumbView;
 @property (weak, nonatomic) IBOutlet UIImageView *galleryThumbView2;
 @property (weak, nonatomic) IBOutlet UIImageView *gallaryThumbView3;

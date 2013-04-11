@@ -33,6 +33,7 @@
 		1850B13917058BDA009FBEBD /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850B13817058BDA009FBEBD /* CommentCell.m */; };
 		1850B14217059823009FBEBD /* Comment+JSONFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850B14117059823009FBEBD /* Comment+JSONFormat.m */; };
 		1850B14B1705D227009FBEBD /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850B14A1705D227009FBEBD /* Comment.m */; };
+		1850B6CC1716B01100C07702 /* GEOGenericCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850B6CB1716B01100C07702 /* GEOGenericCell.m */; };
 		1851095917067AF100563E4E /* GEOMyCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1851095817067AF100563E4E /* GEOMyCart.storyboard */; };
 		1873A0F1171556F0008185EB /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873A0D6171556F0008185EB /* NSIndexPath+PSTCollectionViewAdditions.m */; };
 		1873A0F2171556F0008185EB /* PSTCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873A0D8171556F0008185EB /* PSTCollectionView.m */; };
@@ -253,6 +254,8 @@
 		1850B14117059823009FBEBD /* Comment+JSONFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Comment+JSONFormat.m"; sourceTree = "<group>"; };
 		1850B1491705D227009FBEBD /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
 		1850B14A1705D227009FBEBD /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		1850B6CA1716B01000C07702 /* GEOGenericCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOGenericCell.h; sourceTree = "<group>"; };
+		1850B6CB1716B01100C07702 /* GEOGenericCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEOGenericCell.m; sourceTree = "<group>"; };
 		1851095817067AF100563E4E /* GEOMyCart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GEOMyCart.storyboard; sourceTree = "<group>"; };
 		1873A0D5171556F0008185EB /* NSIndexPath+PSTCollectionViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+PSTCollectionViewAdditions.h"; sourceTree = "<group>"; };
 		1873A0D6171556F0008185EB /* NSIndexPath+PSTCollectionViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+PSTCollectionViewAdditions.m"; sourceTree = "<group>"; };
@@ -1071,6 +1074,8 @@
 				1887B88017034F1500227C37 /* UIImageView+ImageUtil.m */,
 				1887B88117034F1500227C37 /* UILabel+LableUtil.h */,
 				1887B88217034F1500227C37 /* UILabel+LableUtil.m */,
+				1850B6CA1716B01000C07702 /* GEOGenericCell.h */,
+				1850B6CB1716B01100C07702 /* GEOGenericCell.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -1362,6 +1367,7 @@
 				1873A10317155E32008185EB /* CartItemCell.m in Sources */,
 				1873A106171569F4008185EB /* GEOCartItemThumbLayout.m in Sources */,
 				18896AF617157E8A00280F61 /* GEOMyCartCollectionView.m in Sources */,
+				1850B6CC1716B01100C07702 /* GEOGenericCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

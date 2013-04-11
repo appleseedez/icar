@@ -10,9 +10,14 @@
 
 @implementation CommentCell
 
+- (void)awakeFromNib{
+	[super awakeFromNib];
+	[self.thumbView addBorder];
+}
+
 - (void)drawRect:(CGRect)rect{
 	[super drawRect:rect];
-	[self.thumbView addBorder];
-	[self addColorBackground];
+	self.bottomBorderLayer.frame = CGRectMake(0, self.contentView.bounds.size.height-1, self.contentView.bounds.size.width, .5);
+	self.outterBorderLayer.frame = CGRectMake(0, self.contentView.bounds.size.height, self.contentView.bounds.size.width, .5);
 }
 @end

@@ -10,10 +10,9 @@
 
 @implementation GEOLoginHeaderView
 
-- (void)drawRect:(CGRect)rect
-{
-	[super drawRect:rect];
-    [self.headerImageView addBorder];
+- (void)awakeFromNib{
+	[self.headerImageView addBorder];
+	[super awakeFromNib];
 }
 
 

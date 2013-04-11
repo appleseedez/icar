@@ -24,14 +24,17 @@
 
 - (void) addColorBackground{
 	CALayer *bottomBorderLayer = [CALayer layer];
+
 	bottomBorderLayer.borderColor = [UIColor colorWithRed:0.878 green:0.878 blue:0.878 alpha:1].CGColor;
 	bottomBorderLayer.borderWidth = 4;
 	bottomBorderLayer.frame = CGRectMake(0, self.contentView.bounds.size.height, self.contentView.bounds.size.width, 1);
 	[self.contentView.layer addSublayer:bottomBorderLayer];
 	CALayer *outterBorderLayer = [CALayer layer];
+
 	outterBorderLayer.borderColor = [UIColor whiteColor].CGColor;
 	outterBorderLayer.borderWidth = 4;
 	outterBorderLayer.frame = CGRectMake(0, self.contentView.bounds.size.height+1, self.contentView.bounds.size.width, 1);
 	[self.contentView.layer addSublayer:outterBorderLayer];
+	
 }
 @end

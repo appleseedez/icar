@@ -11,15 +11,14 @@
 #import "UITableViewCell+BackgroundUtil.h"
 @implementation GoodyGalleryCell
 
-
-
-- (void)drawRect:(CGRect)rect{
-	[super drawRect:rect];
+- (void)awakeFromNib{
+	[super awakeFromNib];
 	[self.gallaryThumbView addBorder];
 	[self.galleryThumbView2 addBorder];
 	[self.gallaryThumbView3 addBorder];
-	[self addColorBackground];
-	
+
 }
+
+
 
 @end

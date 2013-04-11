@@ -12,7 +12,7 @@
 
 -(CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines{
 	CGSize size = [self.text sizeWithFont:self.font constrainedToSize:CGSizeMake(self.bounds.size.width, 1000) lineBreakMode:self.lineBreakMode];
-	return (CGRect){bounds.origin,CGSizeMake(self.bounds.size.width, size.height+6.0f)};
+	return (CGRect){bounds.origin,CGSizeMake(self.bounds.size.width, size.height)};
 }
 
 @end

@@ -12,18 +12,23 @@
 #import "Comment+JSONFormat.h"
 @interface GEOCommentIndexViewController ()
 @property (nonatomic) BOOL lock; // 防止多次调用useDoument导致多次打开UIDocument的错误
+@property (nonatomic) float commentBodyWidth;
 @end
 
 @implementation GEOCommentIndexViewController
 
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
+	self.tableView.separatorColor = [UIColor clearColor];
 	if (self.iCarDatabase == nil) {
 		self.iCarDatabase = [[CoreDataManager share] managedDocument];
 	}
 	self.lock = NO;
+	self.commentBodyWidth = 242.0f;
 	[self useDocument];
 }
+
+
 
 
 #pragma mark - setup the FetchResultController
@@ -35,6 +40,7 @@
 	
 	
 	self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchAllServiceRequest managedObjectContext:self.iCarDatabase.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+	
 }
 
 #define JSON_URL_COMMENT @"https://api.mongolab.com/api/1/databases/yangche-geo/collections/comments?apiKey=1gdxdp157X9xPkkGHFsH4MYBWWYaS37o"
@@ -99,6 +105,7 @@
 
 
 #pragma mark - tableview datasource
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"CommentCell";
@@ -110,7 +117,10 @@
     Comment* comment = [self.fetchedResultsController objectAtIndexPath:indexPath];
 	cell.nameLabel.text = comment.commentor;
 	cell.comentLabel.text = comment.body;
+
 	[cell.comentLabel sizeToFit];
+	self.commentBodyWidth = cell.comentLabel.bounds.size.width;
+	
 	
 	[cell.thumbView setImageWithURL:[NSURL URLWithString:comment.thumb] placeholderImage:[UIImage imageNamed:@"index-thumb2@2x.jpg"]];
 	
@@ -119,14 +129,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 	
-	float prototypeHeight = 58.0f;
+	
 	NSString* commentBody = [[self.fetchedResultsController objectAtIndexPath:indexPath] body];
-	CGSize bodySize = [commentBody sizeWithFont:[UIFont systemFontOfSize:10] constrainedToSize:CGSizeMake(242.0f, 1000.0f) lineBreakMode:NSLineBreakByCharWrapping];
-	if (bodySize.height>21.0f) {
-		return prototypeHeight + bodySize.height -21.0 + 6.0;
-	}else{
-		return prototypeHeight;
-	}
+	CGSize bodySize = [commentBody sizeWithFont:[UIFont systemFontOfSize:12] constrainedToSize:CGSizeMake(self.commentBodyWidth, 1000.0f) lineBreakMode:NSLineBreakByCharWrapping];
+
+	return MAX(bodySize.height+45.0, 64.0f);
 }
 
 

@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface GoodsIndexCell : UITableViewCell
+#import "GEOGenericCell.h"
+@interface GoodsIndexCell : GEOGenericCell
 @property (weak, nonatomic) IBOutlet UIImageView *thumbView;
 @property (weak, nonatomic) IBOutlet UILabel *serviceTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalScoreLabel;

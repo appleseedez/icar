@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AutoDetectHeightUILabel.h"
-@interface CommentCell : UITableViewCell
+#import "GEOGenericCell.h"
+@interface CommentCell : GEOGenericCell
 @property (weak, nonatomic) IBOutlet UIImageView *thumbView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
