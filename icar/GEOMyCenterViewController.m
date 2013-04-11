@@ -37,6 +37,14 @@
 	[self setHeaderView:nil];
 	[super viewDidUnload];
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+	if (indexPath.row == 0 && indexPath.section == 0) {
+		[self presentViewController:[[UIStoryboard storyboardWithName:@"GEOMyCart" bundle:nil] instantiateInitialViewController] animated:YES completion:nil];
+	}
+}
+
+#pragma mark - actions
 - (IBAction)wantLogin:(UIButton *)sender {
 	[self presentViewController:[[UIStoryboard storyboardWithName:@"GEOLogin" bundle:nil] instantiateInitialViewController] animated:YES completion:nil];
 }

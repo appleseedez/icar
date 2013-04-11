@@ -716,31 +716,6 @@
         <image name="warm" width="16" height="16"/>
         <image name="wash" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="GEOIndexViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOIndexViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="modalToGoodsIndexByTouch:" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="GEOMyCenterProfileView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOMyCenterProfileView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="thumbView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="GEOMyCenterViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOMyCenterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="wantLogin:" candidateClass="UIButton"/>
-                <relationship kind="action" name="wantRegiter:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="headerView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="GEOSettingsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GEOSettingsViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

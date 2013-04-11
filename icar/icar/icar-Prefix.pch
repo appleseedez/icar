@@ -20,5 +20,6 @@
 	#import "UIImageView+ImageUtil.h"
 	#import "UITableViewCell+BackgroundUtil.h"
 	#import "UILabel+LableUtil.h"
+	#import "PSTCollectionView.h"
 
 #endif

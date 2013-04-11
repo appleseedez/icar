@@ -11,5 +11,5 @@
 @interface UILabel (LableUtil)
 -(void)addBorderAtBottomWithFrame:(CGRect) frame;
 
-
+-(void)addBorderAtMid;
 @end

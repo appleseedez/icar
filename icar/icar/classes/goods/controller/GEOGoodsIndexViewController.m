@@ -67,6 +67,7 @@
   for ios6
  */
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+
 	[self.locationManager stopUpdatingLocation];
 	NSAssert([locations count]>=1, @"获取当前位置失败了");
 	self.currentLocation = [locations lastObject];

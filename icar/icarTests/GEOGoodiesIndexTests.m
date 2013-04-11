@@ -11,7 +11,7 @@
 @implementation GEOGoodiesIndexTests
 - (void) testFetchIndexFromServer{
 	/*
-	  描述: 
+	  描述: \
 	 1. 从服务端异步加载全部商品索引.保存到本地
 	 2. 根据当前用户位置计算商品和用户的距离, 按照距离由近到远排序后展示
 	 3. 用户修改排序规则. 本地数据排序

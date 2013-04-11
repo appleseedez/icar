@@ -17,5 +17,14 @@
 	[self.layer insertSublayer:bottomBorderLayer atIndex:0];
 }
 
+- (void)addBorderAtMid{
+	CALayer* borderLayer = [CALayer layer];
+	borderLayer.borderWidth = 1;
+	
+	CGFloat width = [self.text sizeWithFont:self.font constrainedToSize:CGSizeMake(self.bounds.size.width, 1000) lineBreakMode:self.lineBreakMode].width;
+	borderLayer.frame = CGRectMake((self.bounds.size.width-width)*.5-1, self.bounds.size.height/2,width+2,1);
+	borderLayer.borderColor = [UIColor darkGrayColor].CGColor;
+	[self.layer addSublayer:borderLayer];
+}
 
 @end
