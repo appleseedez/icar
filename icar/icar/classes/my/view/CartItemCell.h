@@ -12,6 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *thumbView;
 @property (weak, nonatomic) IBOutlet  UILabel*titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *oldPriceLabel;
-
-
+- (void)enabledSelectEffect;
+- (void) disableSelectEffect;
 @end

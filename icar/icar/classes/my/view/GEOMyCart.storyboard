@@ -48,6 +48,7 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="index-thumb2@2x.jpg" id="cxb-P2-SzY">
                                             <rect key="frame" x="20" y="20" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <gestureRecognizers/>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="汽车引擎改装" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SRB-Cv-9Kz">
                                             <rect key="frame" x="8" y="76" width="75" height="21"/>
@@ -74,6 +75,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="oldPriceLabel" destination="329-uA-XpD" id="nI0-Oj-hnV"/>
                                     <outlet property="thumbView" destination="cxb-P2-SzY" id="wRf-je-PRA"/>
@@ -86,6 +88,13 @@
                             <outlet property="delegate" destination="0Ic-jH-icf" id="1bG-k0-Gsf"/>
                         </connections>
                     </collectionView>
+                    <toolbarItems>
+                        <barButtonItem image="tag" width="44" style="plain" id="hgq-ka-ExM">
+                            <connections>
+                                <action selector="toggleEditMode:" destination="0Ic-jH-icf" id="4Fg-Vs-Ae3"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="我的购物车" id="M8Y-NY-hd6">
                         <barButtonItem key="leftBarButtonItem" id="dMz-YV-nkB">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vSI-UX-4yi">
@@ -105,8 +114,25 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="longPressGesture" destination="4AD-ws-wsF" id="Yzs-zF-Anc"/>
+                        <outlet property="tapGesture" destination="aJQ-bO-shS" id="SYH-DL-QLe"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5X-2p-zoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="4AD-ws-wsF">
+                    <connections>
+                        <action selector="longPressed:" destination="0Ic-jH-icf" id="mmP-mS-KlQ"/>
+                        <outlet property="delegate" destination="0Ic-jH-icf" id="bzV-mu-7Tf"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="aJQ-bO-shS">
+                    <connections>
+                        <action selector="tapped:" destination="0Ic-jH-icf" id="Utg-ur-zub"/>
+                        <outlet property="delegate" destination="0Ic-jH-icf" id="ym2-Dh-WgY"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="412" y="-163"/>
         </scene>
@@ -114,6 +140,7 @@
     <resources>
         <image name="close-button" width="16" height="16"/>
         <image name="index-thumb2@2x.jpg" width="160" height="160"/>
+        <image name="tag" width="16" height="16"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
