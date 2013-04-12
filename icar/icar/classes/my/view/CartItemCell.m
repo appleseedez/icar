@@ -10,6 +10,8 @@
 #define SELECTED_COLOR [UIColor colorWithRed:0.651 green:0.788 blue:0.859 alpha:1]
 #define NORMAL_BORDER_COLOR [UIColor colorWithRed:0.87 green:0.87 blue:0.87 alpha:1]
 #define BACKGROUND_COLOR [UIColor colorWithRed:0.969 green:0.969 blue:0.969 alpha:1]
+#define BACKGROUND_BORDER_WIDTH 0.5
+#define SELECTED_BORDER_WIDTH 0.5
 #define SELECT_TRIANGLE_CLIP_SIZE 16
 @implementation CartItemCell
 
@@ -20,15 +22,15 @@
 	[self.thumbView addBorder];
 	[self.oldPriceLabel addBorderAtMid];
 	self.backgroundView = [[UIView alloc] initWithFrame:self.contentView.frame];
-	self.backgroundView.layer.borderWidth = .5;
+	self.backgroundView.layer.borderWidth = BACKGROUND_BORDER_WIDTH;
 	self.backgroundView.layer.borderColor =  NORMAL_BORDER_COLOR.CGColor;
 
 	self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.contentView.frame];
 	// 右上角的小三角 16x16
 	UIBezierPath* path = [UIBezierPath bezierPath];
-	[path moveToPoint:CGPointMake(1,1)];
-	[path addLineToPoint:CGPointMake(1,15)];
-	[path addLineToPoint:CGPointMake(15,15)];
+	[path moveToPoint:CGPointMake(0,0)];
+	[path addLineToPoint:CGPointMake(0,SELECT_TRIANGLE_CLIP_SIZE)];
+	[path addLineToPoint:CGPointMake(SELECT_TRIANGLE_CLIP_SIZE,SELECT_TRIANGLE_CLIP_SIZE)];
 	[path closePath];
 
 	CAShapeLayer* layer = [CAShapeLayer layer];
@@ -43,7 +45,7 @@
 	// 作为选中时的背景边框. 因为直接给selectedBackgroundView设置边框会导致selectedBackgroundView的sublayer遮不住selectedBackgroundView的边框
 	// 换言之, calayer的相互层叠只在两个同级layer间有效. 父子layer的情况,父级layer的边框始终可见
 	CALayer* selectedBorderLayer = [CALayer layer];
-	selectedBorderLayer.borderWidth = .5;
+	selectedBorderLayer.borderWidth = SELECTED_BORDER_WIDTH;
 	selectedBorderLayer.borderColor = SELECTED_COLOR.CGColor;
 	selectedBorderLayer.frame = self.selectedBackgroundView.frame;
 	[self.selectedBackgroundView.layer addSublayer:selectedBorderLayer];
