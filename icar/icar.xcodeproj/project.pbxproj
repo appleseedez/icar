@@ -34,6 +34,10 @@
 		1850B14217059823009FBEBD /* Comment+JSONFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850B14117059823009FBEBD /* Comment+JSONFormat.m */; };
 		1850B14B1705D227009FBEBD /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850B14A1705D227009FBEBD /* Comment.m */; };
 		1850B6CC1716B01100C07702 /* GEOGenericCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850B6CB1716B01100C07702 /* GEOGenericCell.m */; };
+		1850B6CF1716FB5800C07702 /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = 1850B6CD1716FB5800C07702 /* tag.png */; };
+		1850B6D01716FB5800C07702 /* tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1850B6CE1716FB5800C07702 /* tag@2x.png */; };
+		1850B6D31716FF0600C07702 /* todo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1850B6D11716FF0600C07702 /* todo.png */; };
+		1850B6D41716FF0600C07702 /* todo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1850B6D21716FF0600C07702 /* todo@2x.png */; };
 		1851095917067AF100563E4E /* GEOMyCart.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1851095817067AF100563E4E /* GEOMyCart.storyboard */; };
 		1873A0F1171556F0008185EB /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873A0D6171556F0008185EB /* NSIndexPath+PSTCollectionViewAdditions.m */; };
 		1873A0F2171556F0008185EB /* PSTCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1873A0D8171556F0008185EB /* PSTCollectionView.m */; };
@@ -256,6 +260,10 @@
 		1850B14A1705D227009FBEBD /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
 		1850B6CA1716B01000C07702 /* GEOGenericCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOGenericCell.h; sourceTree = "<group>"; };
 		1850B6CB1716B01100C07702 /* GEOGenericCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEOGenericCell.m; sourceTree = "<group>"; };
+		1850B6CD1716FB5800C07702 /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
+		1850B6CE1716FB5800C07702 /* tag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag@2x.png"; sourceTree = "<group>"; };
+		1850B6D11716FF0600C07702 /* todo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = todo.png; sourceTree = "<group>"; };
+		1850B6D21716FF0600C07702 /* todo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "todo@2x.png"; sourceTree = "<group>"; };
 		1851095817067AF100563E4E /* GEOMyCart.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GEOMyCart.storyboard; sourceTree = "<group>"; };
 		1873A0D5171556F0008185EB /* NSIndexPath+PSTCollectionViewAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexPath+PSTCollectionViewAdditions.h"; sourceTree = "<group>"; };
 		1873A0D6171556F0008185EB /* NSIndexPath+PSTCollectionViewAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexPath+PSTCollectionViewAdditions.m"; sourceTree = "<group>"; };
@@ -763,6 +771,10 @@
 		187B428517011A0400331F3B /* common */ = {
 			isa = PBXGroup;
 			children = (
+				1850B6D11716FF0600C07702 /* todo.png */,
+				1850B6D21716FF0600C07702 /* todo@2x.png */,
+				1850B6CD1716FB5800C07702 /* tag.png */,
+				1850B6CE1716FB5800C07702 /* tag@2x.png */,
 				180F631617141AF100922CAA /* timer.png */,
 				180F631717141AF100922CAA /* timer@2x.png */,
 				180F6312171419C400922CAA /* x.png */,
@@ -1267,6 +1279,10 @@
 				180F6315171419C400922CAA /* x@2x.png in Resources */,
 				180F631817141AF100922CAA /* timer.png in Resources */,
 				180F631917141AF100922CAA /* timer@2x.png in Resources */,
+				1850B6CF1716FB5800C07702 /* tag.png in Resources */,
+				1850B6D01716FB5800C07702 /* tag@2x.png in Resources */,
+				1850B6D31716FF0600C07702 /* todo.png in Resources */,
+				1850B6D41716FF0600C07702 /* todo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

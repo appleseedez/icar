@@ -17,6 +17,7 @@
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
 	self.collectionView.collectionViewLayout = [[GEOCartItemThumbLayout alloc] init];
+	self.collectionView.allowsMultipleSelection = YES;
 	
 }
 

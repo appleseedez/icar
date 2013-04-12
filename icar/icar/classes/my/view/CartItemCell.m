@@ -7,7 +7,10 @@
 //
 
 #import "CartItemCell.h"
-
+#define SELECTED_COLOR [UIColor colorWithRed:0.651 green:0.788 blue:0.859 alpha:1]
+#define NORMAL_BORDER_COLOR [UIColor colorWithRed:0.87 green:0.87 blue:0.87 alpha:1]
+#define BACKGROUND_COLOR [UIColor colorWithRed:0.969 green:0.969 blue:0.969 alpha:1]
+#define SELECT_TRIANGLE_CLIP_SIZE 16
 @implementation CartItemCell
 
 
@@ -16,9 +19,35 @@
 	[super awakeFromNib];
 	[self.thumbView addBorder];
 	[self.oldPriceLabel addBorderAtMid];
-	self.layer.borderWidth = .5;
-	self.layer.borderColor =  [UIColor colorWithRed:0.878 green:0.878 blue:0.878 alpha:1].CGColor;
+	self.backgroundView = [[UIView alloc] initWithFrame:self.contentView.frame];
+	self.backgroundView.layer.borderWidth = .5;
+	self.backgroundView.layer.borderColor =  NORMAL_BORDER_COLOR.CGColor;
 
+	self.selectedBackgroundView = [[UIView alloc] initWithFrame:self.contentView.frame];
+	// 右上角的小三角 16x16
+	UIBezierPath* path = [UIBezierPath bezierPath];
+	[path moveToPoint:CGPointMake(1,1)];
+	[path addLineToPoint:CGPointMake(1,15)];
+	[path addLineToPoint:CGPointMake(15,15)];
+	[path closePath];
+
+	CAShapeLayer* layer = [CAShapeLayer layer];
+	layer.backgroundColor =BACKGROUND_COLOR.CGColor;
+	layer.frame =CGRectMake(self.contentView.bounds.size.width-SELECT_TRIANGLE_CLIP_SIZE, 0, SELECT_TRIANGLE_CLIP_SIZE, SELECT_TRIANGLE_CLIP_SIZE);
+	layer.path = [path CGPath];
+	[layer setFillColor: SELECTED_COLOR.CGColor];
+	[layer setStrokeColor:SELECTED_COLOR.CGColor];
+	[layer setLineWidth:1]; // 如果设置为1px会出现锯齿.
+	[layer setLineJoin:kCALineJoinBevel];
+
+	// 作为选中时的背景边框. 因为直接给selectedBackgroundView设置边框会导致selectedBackgroundView的sublayer遮不住selectedBackgroundView的边框
+	// 换言之, calayer的相互层叠只在两个同级layer间有效. 父子layer的情况,父级layer的边框始终可见
+	CALayer* selectedBorderLayer = [CALayer layer];
+	selectedBorderLayer.borderWidth = .5;
+	selectedBorderLayer.borderColor = SELECTED_COLOR.CGColor;
+	selectedBorderLayer.frame = self.selectedBackgroundView.frame;
+	[self.selectedBackgroundView.layer addSublayer:selectedBorderLayer];
+	[self.selectedBackgroundView.layer addSublayer:layer];
 }
 
 @end
