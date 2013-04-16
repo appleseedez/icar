@@ -9,14 +9,22 @@
 #import "GEOMyCartViewController.h"
 #import "GEOCartItemThumbLayout.h"
 #import "CartItemCell.h"
+#import "GEOGroupLayout.h"
 @interface GEOMyCartViewController ()
 @property(nonatomic) CAAnimation* anim;
+@property(nonatomic) GEOCartItemThumbLayout* cartItemThumbLayout;
+@property(nonatomic) GEOGroupLayout* cartItemGroupLayout;
 @end
 
 @implementation GEOMyCartViewController
 - (void)viewWillAppear:(BOOL)animated{
 	[super viewWillAppear:animated];
-	self.collectionView.collectionViewLayout = [[GEOCartItemThumbLayout alloc] init];
+	NSAssert(self.cartItemThumbLayout == nil, @"layout exist");
+	self.cartItemThumbLayout = [[GEOCartItemThumbLayout alloc] init];
+	self.cartItemGroupLayout = [[GEOGroupLayout alloc] init];
+	self.collectionView.collectionViewLayout = self.cartItemThumbLayout;
+
+	
 	self.collectionView.allowsMultipleSelection = YES;
 	self.anim = [self getShakeAnimation];
 	self.editMode = NO;
@@ -84,6 +92,12 @@
 	
 	return cell;
 }
+
+- (PSUICollectionReusableView *)collectionView:(PSUICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+	static NSString* CollectionViewHeaderCellIdentifer = @"CartItemHeaderCell";
+	PSUICollectionReusableView* headerView = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:CollectionViewHeaderCellIdentifer forIndexPath:indexPath];
+	return headerView;
+}
 #pragma  mark - actions
 - (IBAction)closeModal:(UIButton *)sender {
 	[self dismissViewControllerAnimated:YES completion:nil];
@@ -115,6 +129,14 @@
 
 }
 - (IBAction)toggleEditMode:(id)sender{
+//	
+//	if (self.editMode) {
+//		self.editMode = NO;
+//		self.collectionView.collectionViewLayout = self.cartItemThumbLayout;
+//	}else{
+//		self.editMode = YES;
+//		self.collectionView.collectionViewLayout = self.cartItemGroupLayout;
+//	}
 	if (self.editMode) {
 		if (self.deleteMode) {
 			self.deleteMode = NO;

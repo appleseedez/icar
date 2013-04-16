@@ -1,18 +1,18 @@
 //
-//  GEOCartItemThumbLayout.m
+//  GEOGroupLayout.m
 //  icar
 //
-//  Created by Pharaoh on 13-4-10.
+//  Created by Pharaoh on 13-4-13.
 //  Copyright (c) 2013年 365icar. All rights reserved.
 //
 
-#import "GEOCartItemThumbLayout.h"
+#import "GEOGroupLayout.h"
 
-@implementation GEOCartItemThumbLayout
+@implementation GEOGroupLayout
 - (id)init{
 	if (self = [super init]) {
 		self.sectionInset = UIEdgeInsetsMake(10,10,10,10);
-		self.itemSize = CGSizeMake(90, 180);
+		self.itemSize = CGSizeMake(45, 45);
 	}
 	
 	return self;
@@ -23,6 +23,4 @@
 	size.width = 300;
 	return size;
 }
-
-
 @end

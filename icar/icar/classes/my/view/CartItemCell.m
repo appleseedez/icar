@@ -22,7 +22,9 @@
 	[super awakeFromNib];
 	[self.thumbView addBorder];
 	[self.oldPriceLabel addBorderAtMid];
+	
 	self.backgroundView = [[UIView alloc] initWithFrame:self.contentView.frame];
+	self.backgroundView.backgroundColor = [UIColor whiteColor];
 	self.backgroundView.layer.borderWidth = BACKGROUND_BORDER_WIDTH;
 	self.backgroundView.layer.borderColor =  NORMAL_BORDER_COLOR.CGColor;
 	[self enabledSelectEffect];
